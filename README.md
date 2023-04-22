@@ -31,13 +31,13 @@ Structure:
       - [SettingsNav.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/Elements/SettingsNav.vue) (Navigation section for /settings page);
       - [SettingsTitle.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/Elements/SettingsTitle.vue) (Title block for /settings page);
       - [SettingsTopline.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/Elements/SettingsTopline.vue) (Topline section for /settings page);
-    - [Views](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/Views/) (Pages for /settings page. You can correlate pages with templates by file names)
+    - [Views](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/Views/) (Pages for /settings page. You can correlate pages with templates by file names);
   - [Terminal](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/) (Templates for /terminal page):
     - [Elements](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/Elements/) (Addition elements for /terminal page):
       - [TerminalChangePanel.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/Elements/TerminalChangePanel.vue) (Action panel for /terminal);
       - [TerminalNavPanel.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/Elements/TerminalNavPanel.vue) (Navigation section for /terminal page);
       - [TerminalSettingsPanel.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/Elements/TerminalSettingsPanel.vue) (Settings panel for /terminal);
-    - [Views](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/Views/) (Pages for /terminal page. You can correlate pages with templates by file names)
+    - [Views](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/Views/) (Pages for /terminal page. You can correlate pages with templates by file names);
 - router:
   - [index.ts](https://github.com/HuzyagulovER/Dashboard/tree/master/src/router/index.ts) (Routes for base routing);
 - views:
@@ -47,4 +47,4 @@ Structure:
   - [TheRecovery.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/views/TheRecovery.vue) (Base template for /recovery);
   - [TheRegistration.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/views/TheRegistration.vue) (Base template for /registration);
   - [TheSettings.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/views/TheSettings.vue) (Base template for /settings);
-  - [TheTerminal.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/views/TheTerminal.vue) (Base template for /terminal);
+  - [TheTerminal.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/views/TheTerminal.vue) (Base template for /terminal).

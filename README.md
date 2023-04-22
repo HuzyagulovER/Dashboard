@@ -48,7 +48,3 @@ Structure:
   - [TheRegistration.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/views/TheRegistration.vue) (Base template for /registration);
   - [TheSettings.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/views/TheSettings.vue) (Base template for /settings);
   - [TheTerminal.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/views/TheTerminal.vue) (Base template for /terminal);
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).

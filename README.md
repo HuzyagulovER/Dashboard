@@ -21,11 +21,11 @@ Structure:
   - [Elements](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Elements/) (All base templates)
   - [Icons](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Icons/) (All icons in Vue templates)
   - [Menu](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Menu/) (Templates for /menu page):
-    - [Elements](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Menu/Elements/):
+    - [Elements](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Menu/Elements/) (Addition elements for /menu page):
       - [MenuNav.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Menu/Elements/MenuNav.vue) (Navigation section for /menu page);
     - [Views](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Menu/Views/) (Pages for /menu page. You can correlate pages with templates by file names);
   - [Settings](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/) (Templates for /settings page):
-    - [Elements](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/Elements/):
+    - [Elements](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/Elements/) (Addition elements for /settings page):
       - [SettingsAlert.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/Elements/SettingsAlert.vue) (Alert block for /settings page);
       - [SettingsGraph.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/Elements/SettingsGraph.vue) (Graph block for /settings page);
       - [SettingsNav.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/Elements/SettingsNav.vue) (Navigation section for /settings page);
@@ -33,7 +33,7 @@ Structure:
       - [SettingsTopline.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/Elements/SettingsTopline.vue) (Topline section for /settings page);
     - [Views](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Settings/Views/) (Pages for /settings page. You can correlate pages with templates by file names)
   - [Terminal](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/) (Templates for /terminal page):
-    - [Elements](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/Elements/):
+    - [Elements](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/Elements/) (Addition elements for /terminal page):
       - [TerminalChangePanel.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/Elements/TerminalChangePanel.vue) (Action panel for /terminal);
       - [TerminalNavPanel.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/Elements/TerminalNavPanel.vue) (Navigation section for /terminal page);
       - [TerminalSettingsPanel.vue](https://github.com/HuzyagulovER/Dashboard/tree/master/src/components/Terminal/Elements/TerminalSettingsPanel.vue) (Settings panel for /terminal);

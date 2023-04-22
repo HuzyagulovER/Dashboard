@@ -2,8 +2,9 @@
 	<div class="settings-title">
 		<RouterLink to="/add-account">
 			<BaseIconButton class="settings-title__icon-container">
-				<IconSettings class="settings-title__icon" /> </BaseIconButton
-		></RouterLink>
+				<IconSettings class="settings-title__icon" />
+			</BaseIconButton>
+		</RouterLink>
 		<p class="settings-title__title">Настройки</p>
 		<BaseIconButton class="settings-title__icon-container">
 			<IconSearch class="settings-title__icon" />

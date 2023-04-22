@@ -1,0 +1,51 @@
+@use "sass:map";
+@use "sass:list";
+
+@function get-border-radius($radius-name) {
+	$radii: (
+		small: $--r_small,
+		smedium: $--r_smedium,
+		medium: $--r_medium,
+		merge: $--r_merge,
+		large: $--r_large,
+	);
+	@if map.get($radii, $radius-name) == "null" {
+		@return $radius-name;
+	}
+	@return map.get($radii, $radius-name);
+}
+
+@function grid-sides($rows-number, $columns-number) {
+	$rows: ();
+	$columns: ();
+	@each $row in $rows-number {
+		$rows: list.append($rows, $row);
+	}
+	@each $column in $columns-number {
+		$columns: list.append($columns, $column);
+	}
+	@return $rows / $columns;
+}
+
+@function lists-merge($list, $list_default) {
+	$new-list: $list_default;
+	@if list.length($list) != 0 {
+		$i: 1;
+		@each $item in $list {
+			@if $item != n {
+				$new-list: list.set-nth($new-list, $i, $item);
+			}
+			$i: $i + 1;
+		}
+	}
+	@return $new-list;
+}
+
+@function map-from-list($list: ()) {
+	$i: 1;
+	$map: ();
+	@each $item in $list {
+		$map: map.set($map, $i, $item);
+	}
+	@return $map;
+}

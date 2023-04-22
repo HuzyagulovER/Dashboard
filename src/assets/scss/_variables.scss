@@ -1,0 +1,32 @@
+$--c_main: #1c1c1c;
+$--c_grey-dark: #282727;
+$--c_grey: #3c3c3c;
+$--c_grey-light: #6d6d6d;
+$--c_whitish-grey: #afafaf;
+$--c_greyish-white: #d9d9d9;
+$--c_white: #fff;
+$--c_black: #000;
+$--c_yellow: #ebfc56;
+$--c_red: #920a0a;
+$--c_green: #90d847;
+
+$--r_small: 100vw / 384;
+$--r_smedium: 100vw / 192;
+$--r_medium: 100vw / 128;
+$--r_merge: 100vw / 96;
+$--r_large: 100vw / 48;
+
+$--fz_xs: 100vw / 148;
+$--fz_s: 100vw / 128;
+$--fz_m: 100vw / 96;
+$--fz_xm: 100vw / 76.8;
+$--fz_l: 100vw / 64;
+$--fz_xl: 100vw / 48;
+$--fz_base: 100vw / 120;
+
+$--grid-left-width: 20;
+$--grid-right-width: 100-$--grid-left-width;
+$--grid-top-height: 9;
+$--grid-bottom-height: 100-$--grid-top-height;
+
+$px: 1px;

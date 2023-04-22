@@ -1,30 +1,46 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+	<RouterView name="Navbar" />
+	<RouterView />
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	font-family: "Gilroy_R", Arial;
+	font-size: calc(100vw / 120);
+	box-sizing: border-box;
+	color: $--c_greyish-white;
+
+	&::-webkit-scrollbar {
+		width: 0.5rem;
+		background-color: transparent;
+
+		&-thumb {
+			background-color: $--c_yellow;
+		}
+
+		&-track {
+			background: transparent;
+		}
+	}
+
+	&::-webkit-scrollbar-button,
+	&::-webkit-scrollbar-corner,
+	&::-webkit-resizer {
+		display: none;
+	}
 }
 
-nav {
-  padding: 30px;
+html,
+body,
+#app {
+	width: 100%;
+	height: 100%;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+body {
+	background-color: $--c_main;
 }
 </style>

@@ -1,0 +1,225 @@
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "functions";
+
+a {
+	text-decoration: none;
+	color: $--c_whitish-grey;
+}
+select {
+	appearance: none;
+}
+
+.base-subbutton {
+	text-align: center;
+	padding: 0.3rem 1.1rem;
+	background-color: $--c_grey;
+	width: 100%;
+	color: $--c_whitish-grey;
+	@include border-radius(small);
+	cursor: pointer;
+	font: {
+		size: 0.94rem;
+		family: "Gilroy_M";
+	}
+}
+.title_large {
+	font: {
+		family: "Gilroy_R";
+		size: 3.125rem;
+	}
+	margin-bottom: 1.5rem;
+	color: $--c_white;
+	letter-spacing: 0.2rem;
+	text-align: center;
+}
+.base-input {
+	color: $--c_whitish-grey;
+	background-color: $--c_grey-dark;
+	@include border0-radius(smedium);
+	padding: 0.8rem;
+	font-size: 1rem;
+	width: 100%;
+}
+.base-input + .base-input {
+	margin-top: 1.5rem;
+}
+.underlined-input {
+	color: $--c_whitish-grey;
+	background-color: transparent;
+	@include border();
+	@include border-sides(0.1rem, solid, $--c_grey-light, [bottom]);
+	font-size: 1rem;
+	width: 100%;
+}
+.reg-form {
+	width: 450px;
+
+	&__input {
+		padding: 1.25rem 2.19rem;
+		font-size: 1.25rem;
+	}
+
+	&__button {
+		margin-top: 2rem;
+	}
+
+	&__subbutton {
+		margin-top: 1rem;
+		width: auto;
+	}
+
+	&__wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+.label {
+	font: {
+		size: $--fz_m;
+		family: "Gilroy_R";
+	}
+	color: $--c_whitish-grey;
+}
+.yellow {
+	color: $--c_yellow !important;
+}
+
+.yellow-border {
+	@include border(0.1rem, solid, $--c_yellow);
+}
+.semibold {
+	font-family: "Gilroy_S";
+}
+.justify-start {
+	justify-content: flex-start !important;
+}
+.align-start {
+	align-items: flex-start !important;
+}
+.justify-center {
+	justify-content: center !important;
+}
+.align-center {
+	align-items: center !important;
+}
+select {
+	font: {
+		family: "Gilroy_S";
+	}
+}
+.page-view {
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+}
+.flex-column {
+	flex-direction: column;
+}
+.block {
+	&__item {
+		@include padding-sides(2rem, (top, bottom));
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item {
+		&__row {
+			display: flex;
+			justify-content: space-between;
+
+			& + .item__row {
+				margin-top: 2rem;
+			}
+		}
+
+		&__arrow {
+			width: 4rem;
+			fill: $--c_grey-light;
+		}
+	}
+
+	&__label {
+		margin-bottom: 0.8rem;
+	}
+
+	&__input.input,
+	.base-select__select {
+		background-color: $--c_grey;
+		@include padding-sides(1.1rem, (top, bottom));
+	}
+
+	&.p-l {
+		padding: 4rem 6rem;
+	}
+}
+.mt-s {
+	margin-top: 1rem;
+}
+.mt-l {
+	margin-top: 3rem !important;
+}
+.mt-m {
+	margin-top: 1.5rem !important;
+}
+.highlight-link.router-link-active {
+	color: $--c_yellow !important;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		height: 100%;
+		background-color: $--c_grey-dark;
+		@include border-radius(medium);
+		z-index: -1;
+	}
+}
+
+$font-sizes: (
+	fz_xs: $--fz_xs,
+	fz_s: $--fz_s,
+	fz_m: $--fz_m,
+	fz_xm: $--fz_xm,
+	fz_l: $--fz_l,
+	fz_xl: $--fz_xl,
+	fz_base: $--fz_base,
+);
+
+@each $fz-name, $fz in $font-sizes {
+	.#{$fz-name} {
+		font-size: $fz;
+	}
+}
+
+@for $i from 1 through 5 {
+	.mr-#{$i} {
+		margin-right: 1rem * $i;
+	}
+}
+
+@for $i from 1 through 3 {
+	@for $j from 1 through 3 {
+		.column-#{$i}-#{$j} {
+			grid-column: #{$i} / #{$j} !important;
+		}
+	}
+}
+
+@for $i from 1 through 10 {
+	.w-#{$i*10} {
+		width: $i * 10%;
+	}
+}
+
+@for $i from 1 through 10 {
+	.display-mxw-#{$i*10} {
+		max-width: $i * 10vw;
+	}
+}

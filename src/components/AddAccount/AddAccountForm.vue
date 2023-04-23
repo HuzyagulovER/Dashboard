@@ -368,7 +368,6 @@ import IconArrowRtl from "@/components/Icons/IconArrowRtl.vue";
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-auto-rows: auto;
-		grid-auto-flow: dense;
 		gap: 3rem;
 		overflow-y: scroll;
 
@@ -391,6 +390,36 @@ import IconArrowRtl from "@/components/Icons/IconArrowRtl.vue";
 
 				& + .buttons__button {
 					margin-left: 3rem;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.add-account {
+		.form {
+			padding: 3rem;
+			gap: 2rem;
+
+			&__column {
+				& > * {
+					margin-bottom: 2rem;
+				}
+			}
+
+			.buttons {
+				grid-column: 1/3 !important;
+				justify-content: space-around;
+
+				&__button {
+					width: auto;
+					padding: 1.5rem 3.5rem;
+					margin: 0;
+					line-height: $--fz_m;
+					font: {
+						size: $--fz_m;
+					}
 				}
 			}
 		}

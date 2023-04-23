@@ -1,12 +1,26 @@
 <template>
 	<main class="menu">
-		<MenuNav class="menu__menu-nav" />
+		<div class="menu__burger-container burger-container">
+			<BaseBurger
+				:init-value="isActiveBurger"
+				@toggle="(is) => (isActiveBurger = is)"
+			/>
+		</div>
+
+		<MenuNav
+			class="menu__menu-nav mobile-menu"
+			:class="{ _active: isActiveBurger }"
+		/>
 		<RouterView class="menu__menu-main" />
 	</main>
 </template>
 
 <script lang="ts" setup>
 import MenuNav from "@/components/Menu/Elements/MenuNav.vue";
+import BaseBurger from "@/components/Elements/BaseBurger.vue";
+import { inject, ref, Ref } from "vue";
+
+let isActiveBurger: Ref<boolean> = ref(false);
 </script>
 
 <style lang="scss">
@@ -31,6 +45,26 @@ import MenuNav from "@/components/Menu/Elements/MenuNav.vue";
 			.title {
 				font-size: $--fz_xm;
 				color: $--c_white;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.menu {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+		&__menu-main {
+			padding: 1rem 3rem 5rem;
+		}
+
+		.block {
+			.item {
+				.title {
+					font-size: $--fz_l;
+				}
 			}
 		}
 	}

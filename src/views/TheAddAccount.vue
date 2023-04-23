@@ -102,4 +102,61 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 		grid-area: form;
 	}
 }
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.add-account {
+		grid-template:
+			"settings-title dashboard-title" auto
+			"accounts accounts" auto
+			"form form" auto / 1fr 1fr;
+
+		&__settings-title,
+		&__dashboard-title {
+			display: block;
+			padding: 4rem 0 3rem;
+			border: 0;
+
+			p {
+				text-align: center;
+
+				font: {
+					size: $--fz_xl;
+				}
+			}
+		}
+
+		.accounts {
+			padding: 0 3rem 3rem; //?#
+			display: flex;
+			justify-content: center;
+			@include border-sides(0.1rem, solid, $--c_grey-light, (bottom));
+
+			& > * + *,
+			&__list > * + * {
+				margin-left: 2rem;
+			}
+
+			&__button {
+				margin-bottom: 0;
+				width: auto;
+				font: {
+					size: $--fz_m;
+				}
+			}
+
+			&__list {
+				flex-direction: row;
+				align-items: center;
+			}
+
+			&__account {
+				margin-top: 0 !important;
+
+				font: {
+					size: $--fz_m;
+				}
+			}
+		}
+	}
+}
 </style>

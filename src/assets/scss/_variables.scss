@@ -10,19 +10,20 @@ $--c_yellow: #ebfc56;
 $--c_red: #920a0a;
 $--c_green: #90d847;
 
-$--r_small: 100vw / 384;
-$--r_smedium: 100vw / 192;
-$--r_medium: 100vw / 128;
-$--r_merge: 100vw / 96;
-$--r_large: 100vw / 48;
+$--r_small: 1rem * 120 / 384;
+$--r_smedium: 1rem * 120 / 192;
+$--r_medium: 1rem * 120 / 128;
+$--r_merge: 1rem * 120 / 96;
+$--r_large: 1rem * 120 / 48;
 
-$--fz_xs: 100vw / 148;
-$--fz_s: 100vw / 128;
-$--fz_m: 100vw / 96;
-$--fz_xm: 100vw / 76.8;
-$--fz_l: 100vw / 64;
-$--fz_xl: 100vw / 48;
-$--fz_base: 100vw / 120;
+$--fz_xs: 1rem * 120 / 148;
+$--fz_s: 1rem * 120 / 128;
+$--fz_m: 1rem * 120 / 96;
+$--fz_xm: 1rem * 120 / 76.8;
+$--fz_l: 1rem * 120 / 64;
+$--fz_xl: 1rem * 120 / 48;
+$--fz_xxl: 1rem * 120 / 30;
+$--fz_base: 1rem;
 
 $--grid-left-width: 20;
 $--grid-right-width: 100-$--grid-left-width;
@@ -30,3 +31,4 @@ $--grid-top-height: 9;
 $--grid-bottom-height: 100-$--grid-top-height;
 
 $px: 1px;
+$--mobile-breakpoint: 760px;

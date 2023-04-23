@@ -13,6 +13,7 @@
 	color: $--c_black;
 	@include border-radius(smedium);
 	cursor: pointer;
+	white-space: nowrap;
 	font: {
 		size: $--fz_xm;
 		family: "Gilroy_B";
@@ -22,6 +23,14 @@
 		background-color: transparent;
 		@include border(0.1rem, solid, $--c_yellow);
 		color: $--c_white;
+	}
+}
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.base-button {
+		font: {
+			size: $--fz_xm;
+		}
 	}
 }
 </style>

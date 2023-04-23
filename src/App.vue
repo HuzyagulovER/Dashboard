@@ -40,7 +40,23 @@ body,
 	height: 100%;
 }
 
+html {
+	font-size: calc(100vw / 120);
+
+	@media screen and (max-width: $--mobile-breakpoint) {
+		font-size: calc(100vw / 60);
+	}
+}
+
 body {
 	background-color: $--c_main;
+}
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	html,
+	body,
+	#app {
+		overflow: hidden;
+	}
 }
 </style>

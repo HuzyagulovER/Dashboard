@@ -103,6 +103,7 @@ $link-margin-left: 2.4rem;
 $link-padding-vertical: 1rem;
 $link-padding-horizontal: 1rem;
 $link-padding: $link-padding-vertical $link-padding-horizontal;
+$icon-size: 1.8rem;
 
 .menu-nav {
 	padding: 2rem 1rem;
@@ -115,7 +116,6 @@ $link-padding: $link-padding-vertical $link-padding-horizontal;
 	}
 
 	&__icon {
-		$icon-size: 1.8rem;
 		width: $icon-size;
 		height: $icon-size;
 		position: relative;
@@ -140,12 +140,11 @@ $link-padding: $link-padding-vertical $link-padding-horizontal;
 
 	&__link {
 		display: flex;
+		align-items: center;
 		padding: $link-padding;
 		width: 100%;
 
 		&.out-link {
-			margin-top: auto;
-
 			* {
 				fill: $--c_red !important;
 			}
@@ -168,6 +167,25 @@ $link-padding: $link-padding-vertical $link-padding-horizontal;
 			}
 			p {
 				color: $--c_yellow !important;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.menu-nav {
+		padding: 0 5rem 2rem !important;
+
+		&__icon {
+			width: $icon-size + 1rem;
+			height: $icon-size + 1rem;
+		}
+
+		&__link {
+			padding: $link-padding-vertical + 0.8rem $link-padding-horizontal + 1.5rem;
+
+			p {
+				font-size: $--fz_xl !important;
 			}
 		}
 	}

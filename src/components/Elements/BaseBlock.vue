@@ -84,4 +84,54 @@ $column-gap: 4.7rem;
 		@include grid(1, $i);
 	}
 }
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.base-block {
+		@include border0-radius(large);
+		padding: 1rem 2rem;
+		gap: $row-gap $column-gap;
+
+		.title {
+			font: {
+				size: $--fz_l;
+			}
+		}
+
+		.rounded-number {
+			font: {
+				size: $--fz_m;
+			}
+			margin-left: 1.2rem;
+			width: $--fz_l;
+			height: $--fz_l;
+
+			&::after {
+				width: $--fz_xm;
+				height: $--fz_xm;
+				padding: 0.25rem;
+				@include border0-radius(smedium);
+			}
+		}
+
+		&.separated.break {
+			grid-template: 1fr 1fr / 1fr;
+			& > * {
+				& + * {
+					&::after {
+						top: calc($row-gap / -2);
+						left: 0;
+						width: 100%;
+						height: calc($px);
+						background: linear-gradient(
+							to right,
+							transparent 0%,
+							$--c_grey-light 50%,
+							transparent 100%
+						);
+					}
+				}
+			}
+		}
+	}
+}
 </style>

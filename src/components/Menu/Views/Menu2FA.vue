@@ -10,7 +10,7 @@
 		</div>
 
 		<div class="manu-2fa__container">
-			<p class="manu-2fa__title title_large">2FA активирован</p>
+			<p class="manu-2fa__title title_large yellow">2FA активирован</p>
 			<BaseBlock class="manu-2fa__block block">
 				<div class="block__item item">
 					<div class="item__row flex-column justify-start">
@@ -129,6 +129,52 @@ import BaseBlock from "@/components/Elements/BaseBlock.vue";
 
 		.input {
 			width: 25rem;
+		}
+	}
+}
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.manu-2fa {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+
+		&__image {
+			width: 25rem;
+			height: auto;
+			margin: 0 0 5rem;
+		}
+
+		&__container {
+			width: 100%;
+		}
+
+		&__title {
+			letter-spacing: 0.07rem;
+			margin-left: 5rem;
+		}
+
+		&__block {
+			margin-bottom: 3rem;
+			width: 100%;
+		}
+
+		&__no-access {
+			font-size: $--fz_xm;
+			letter-spacing: 0.08rem;
+		}
+
+		.block {
+			padding: 3rem 4rem;
+
+			.item {
+				padding: 0;
+			}
+
+			.input {
+				width: 35rem;
+				padding: 1rem;
+			}
 		}
 	}
 }

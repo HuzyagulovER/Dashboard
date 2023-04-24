@@ -170,7 +170,10 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 	.menu-telegram-bot {
 		.block {
 			@include padding-sides(5rem, (left, right));
-			margin-bottom: 3rem;
+			margin-bottom: 0;
+			& + .block {
+				margin-top: 3rem;
+			}
 		}
 
 		.bot-info {

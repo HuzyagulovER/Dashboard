@@ -69,6 +69,8 @@ import IconGrade from "@/components/Icons/IconGrade.vue";
 	}
 
 	.bottom-line {
+		align-items: center;
+
 		&__volume {
 			letter-spacing: 0.05rem;
 			font-size: $--fz_xm;
@@ -80,6 +82,38 @@ import IconGrade from "@/components/Icons/IconGrade.vue";
 		&__percent {
 			letter-spacing: 0.15rem;
 			color: $--c_green;
+		}
+	}
+}
+@media screen and (max-width: $--mobile-breakpoint) {
+	.graph {
+		padding: 2rem 2rem;
+		font-size: $--fz_s;
+
+		.top-line {
+			&__name {
+				letter-spacing: 0.05rem;
+			}
+
+			&__value {
+				font: {
+					size: $--fz_xm;
+				}
+				letter-spacing: 0.15rem;
+			}
+		}
+
+		.main {
+			margin: 1rem 0;
+		}
+
+		.bottom-line {
+			&__volume {
+				font-size: $--fz_m;
+			}
+
+			&__percent {
+			}
 		}
 	}
 }

@@ -39,4 +39,22 @@ import IconSearch from "@/components/Icons/IconSearch.vue";
 		fill: $--c_yellow;
 	}
 }
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.settings-title {
+		&__title {
+			margin: 0 2rem;
+
+			font: {
+				size: $--fz_xl;
+			}
+		}
+
+		&__icon-container {
+			width: 3rem;
+			height: 3rem;
+			padding: 0.5rem;
+		}
+	}
+}
 </style>

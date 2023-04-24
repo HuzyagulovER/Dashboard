@@ -61,4 +61,13 @@
 		}
 	}
 }
+@media screen and (max-width: $--mobile-breakpoint) {
+	.terminal-nav {
+		&__link {
+			&_text {
+				font-size: $--fz_xm;
+			}
+		}
+	}
+}
 </style>

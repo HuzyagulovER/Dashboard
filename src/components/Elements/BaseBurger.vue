@@ -49,7 +49,7 @@ $burger-width: 3rem;
 	&__line {
 		width: $burger-width;
 		height: $burger-width * 0.15;
-		@include border0-radius($burger-width * 0.15);
+		border-radius: $burger-width * 0.15;
 		background-color: $--c_yellow;
 	}
 }

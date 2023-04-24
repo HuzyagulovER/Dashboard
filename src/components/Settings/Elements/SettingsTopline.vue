@@ -16,10 +16,11 @@
 				<input type="checkbox" />
 				<div class="freeze__layout"></div>
 				<IconCorner class="freeze__tick" />
-				<!-- <div class="freeze__tick"></div> -->
 			</div>
 		</div>
-		<p class="settings-topline__alert-menu">Alert Menu</p>
+		<div class="settings-topline__container">
+			<p class="settings-topline__alert-menu">Alert Menu</p>
+		</div>
 	</div>
 </template>
 
@@ -86,7 +87,7 @@ import IconCorner from "@/components/Icons/IconCorner.vue";
 			input {
 				width: 100%;
 				height: 100%;
-				opacity: 0.3;
+				opacity: 0;
 			}
 		}
 
@@ -119,15 +120,82 @@ import IconCorner from "@/components/Icons/IconCorner.vue";
 		}
 	}
 
+	&__container {
+		align-self: flex-start;
+	}
+
 	&__alert-menu {
 		cursor: pointer;
 		background-color: $--c_grey;
 		padding: 1.2rem 2.2rem;
-		align-self: flex-start;
 		@include border0-radii(0, 0, medium, medium);
 		font: {
 			size: $--fz_xm;
 			weight: bold;
+		}
+	}
+}
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.settings-topline {
+		display: grid;
+		grid-template: auto / auto auto;
+		row-gap: 2rem;
+		padding: 0 6rem 3rem;
+
+		.inputs {
+			order: 2;
+
+			&__wrapper {
+				flex-direction: column;
+				& + .inputs__wrapper {
+					margin-left: 2.5rem;
+				}
+			}
+
+			&__text {
+				margin-right: 0;
+				margin-bottom: 0.5rem;
+				font: {
+					size: $--fz_xm;
+				}
+			}
+
+			&__input {
+				font-size: $--fz_m;
+				width: 15rem;
+			}
+		}
+
+		.freeze {
+			flex-direction: column;
+			align-items: flex-start;
+			order: 3;
+
+			&__text {
+				margin-bottom: 0.5rem;
+				margin-right: 0;
+			}
+
+			&__checkbox {
+				width: 1.8rem;
+				height: 1.8rem;
+			}
+		}
+
+		&__container {
+			width: 100%;
+			order: 1;
+			grid-column: 1/3;
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		&__alert-menu {
+			padding: 2rem 2.2rem 1.2rem;
+			font: {
+				size: $--fz_l;
+			}
 		}
 	}
 }

@@ -49,13 +49,15 @@
 					class="menu-telegram-bot-create__block block grid-column-2 menu-telegram-bot-create__step-2 step"
 				>
 					<div class="block__item item">
-						<div class="step__image">
-							<img
-								src="@/assets/images/Empty.png"
-								alt=""
-								width="284"
-								height="169"
-							/>
+						<div class="item__row justify-center">
+							<div class="step__image">
+								<img
+									src="@/assets/images/Empty.png"
+									alt=""
+									width="284"
+									height="169"
+								/>
+							</div>
 						</div>
 					</div>
 					<div class="block__item item">
@@ -71,13 +73,15 @@
 					class="menu-telegram-bot-create__block block grid-column-2 menu-telegram-bot-create__step-3 step"
 				>
 					<div class="block__item item">
-						<div class="step__image">
-							<img
-								src="@/assets/images/Empty.png"
-								alt=""
-								width="284"
-								height="169"
-							/>
+						<div class="item__row justify-center">
+							<div class="step__image">
+								<img
+									src="@/assets/images/Empty.png"
+									alt=""
+									width="284"
+									height="169"
+								/>
+							</div>
 						</div>
 					</div>
 					<div class="block__item item">
@@ -93,13 +97,15 @@
 					class="menu-telegram-bot-create__block block grid-column-2 menu-telegram-bot-create__step-4 step"
 				>
 					<div class="block__item item">
-						<div class="step__image">
-							<img
-								src="@/assets/images/Empty.png"
-								alt=""
-								width="284"
-								height="169"
-							/>
+						<div class="item__row justify-center">
+							<div class="step__image">
+								<img
+									src="@/assets/images/Empty.png"
+									alt=""
+									width="284"
+									height="169"
+								/>
+							</div>
 						</div>
 					</div>
 					<div class="block__item item">
@@ -115,13 +121,15 @@
 					class="menu-telegram-bot-create__block block grid-column-2 menu-telegram-bot-create__step-5 step"
 				>
 					<div class="block__item item">
-						<div class="step__image">
-							<img
-								src="@/assets/images/Empty.png"
-								alt=""
-								width="284"
-								height="169"
-							/>
+						<div class="item__row justify-center">
+							<div class="step__image">
+								<img
+									src="@/assets/images/Empty.png"
+									alt=""
+									width="284"
+									height="169"
+								/>
+							</div>
 						</div>
 					</div>
 					<div class="block__item item">
@@ -249,6 +257,66 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 			width: auto;
 			@include border0-radius(merge);
 			@include padding-sides(1.8rem, (left, right));
+		}
+	}
+}
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.menu-telegram-bot-create {
+		padding: 0;
+
+		&__top-line {
+			padding: 2.1rem 3.3rem 1.5rem;
+			@include border-sides(0.1rem, solid, $--c_grey, bottom);
+
+			p {
+				font-size: calc($--fz_xm - 0.2rem);
+			}
+		}
+
+		&__container {
+			padding: 2.1rem 3.3rem 3rem;
+			flex-direction: column;
+		}
+
+		&__wrapper {
+			grid-template: auto / 1fr;
+			margin-bottom: 4rem;
+		}
+
+		&__step-1 {
+			@include grid-sizes(1fr, 1fr 1fr);
+			width: 100%;
+		}
+
+		.step {
+			padding: 3rem 2.5rem;
+
+			&__image {
+				width: 20rem;
+				height: auto;
+				margin-right: 0;
+			}
+
+			&__text {
+				font-size: $--fz_xm;
+			}
+
+			&__button {
+				font-size: $--fz_xm;
+			}
+
+			&__input {
+				padding: 0.5rem;
+				font-size: $--fz_m;
+			}
+		}
+
+		&__button-plug {
+			.base-button {
+				font-size: $--fz_l;
+				@include padding-sides(2.5rem, (left, right));
+			}
 		}
 	}
 }

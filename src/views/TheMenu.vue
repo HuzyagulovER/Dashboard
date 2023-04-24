@@ -18,7 +18,7 @@
 <script lang="ts" setup>
 import MenuNav from "@/components/Menu/Elements/MenuNav.vue";
 import BaseBurger from "@/components/Elements/BaseBurger.vue";
-import { inject, ref, Ref } from "vue";
+import { ref, Ref } from "vue";
 
 let isActiveBurger: Ref<boolean> = ref(false);
 </script>
@@ -58,6 +58,7 @@ let isActiveBurger: Ref<boolean> = ref(false);
 
 		&__menu-main {
 			padding: 1rem 3rem 5rem;
+			overflow-x: hidden;
 		}
 
 		.block {

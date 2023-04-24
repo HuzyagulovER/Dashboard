@@ -30,7 +30,7 @@ import IconTrash from "@/components/Icons/IconTrash.vue";
 	display: flex;
 	justify-content: space-around;
 	grid-area: change;
-	@include border-sides(0.1rem, solid, $--c_grey-light, [right, bottom]);
+	@include border-sides(0.1rem, solid, $--c_grey-light, (right, bottom));
 
 	&__icon {
 		fill: $--c_white;
@@ -60,6 +60,26 @@ import IconTrash from "@/components/Icons/IconTrash.vue";
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+}
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.terminal-change {
+		&__icon-container {
+			width: 3.4rem;
+			height: 3.4rem;
+			padding: 0.7rem;
+
+			& + & {
+				margin-left: 1rem;
+			}
+		}
+
+		&__save {
+			@include border-radius(merge);
+			padding: 1rem 2.5rem;
+			font-size: $--fz_l;
+		}
 	}
 }
 </style>

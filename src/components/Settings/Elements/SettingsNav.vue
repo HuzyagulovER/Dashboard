@@ -145,4 +145,44 @@
 		}
 	}
 }
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.settings-nav {
+		padding-top: 10rem !important;
+
+		&__subtitle {
+			font-size: $--fz_xm;
+
+			& ~ .settings-nav__subtitle {
+				margin-top: 1.5rem;
+			}
+		}
+
+		.line {
+			&__link {
+				font-size: $--fz_xl + 0.2rem;
+				padding: 1.8rem 0;
+
+				p {
+					margin-left: 5rem;
+				}
+			}
+
+			&_filter {
+				margin-top: 3rem;
+
+				p {
+					font-size: $--fz_xl;
+					margin-bottom: 1rem;
+				}
+
+				input {
+					height: auto;
+					font-size: $--fz_l;
+					padding: 0.8rem 1rem;
+				}
+			}
+		}
+	}
+}
 </style>

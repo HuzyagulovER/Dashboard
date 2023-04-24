@@ -26,4 +26,17 @@ import SettingsGraph from "@/components/Settings/Elements/SettingsGraph.vue";
 		height: 22.75rem;
 	}
 }
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.g-volume {
+		grid-template: auto / repeat(2, 1fr);
+		gap: 3rem 2rem;
+		padding: 4rem 3rem;
+
+		& > * {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
 </style>

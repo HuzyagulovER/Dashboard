@@ -136,4 +136,42 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 		}
 	}
 }
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.settings-alert {
+		.top-line {
+			&__title {
+				padding: 1.2rem 2.2rem;
+				margin-right: 2rem;
+				font-size: $--fz_xm;
+			}
+
+			&__back {
+				width: 2.2rem;
+				height: 2.2rem;
+				padding: 0.3rem;
+			}
+		}
+
+		.item {
+			&__name {
+				margin-right: 1rem;
+				font-size: $--fz_m;
+			}
+
+			&__button {
+				font-size: $--fz_m;
+			}
+
+			textarea {
+				font-size: $--fz_m;
+				padding: 0.4rem 0.8rem;
+			}
+
+			input {
+				font-size: $--fz_m;
+			}
+		}
+	}
+}
 </style>

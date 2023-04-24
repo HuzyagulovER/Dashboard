@@ -247,13 +247,13 @@ $font-sizes: (
 
 		&__label {
 			margin-bottom: 0.5rem;
-			font-size: $--fz_xm;
+			font-size: $--fz_m;
 		}
 
 		&__input.input,
 		.base-select__select {
 			@include padding-sides(0.7rem, (top, bottom));
-			font-size: $--fz_m;
+			font-size: $--fz_m !important;
 		}
 
 		&.p-l {
@@ -286,5 +286,10 @@ $font-sizes: (
 		width: 100%;
 		background-color: $--c_main;
 		z-index: 6;
+	}
+	.highlight-link.router-link-active {
+		&::before {
+			@include border-radius(merge);
+		}
 	}
 }

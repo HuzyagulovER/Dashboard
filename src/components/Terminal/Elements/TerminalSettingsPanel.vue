@@ -146,4 +146,69 @@ import BaseSelect from "@/components/Elements/BaseSelect.vue";
 		}
 	}
 }
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.terminal-settings {
+		padding: 3rem 15rem 6rem 8rem !important;
+
+		&__subtitle {
+			margin-bottom: 1.3rem;
+			font-size: $--fz_m;
+		}
+
+		.line {
+			margin-bottom: 2rem;
+
+			&__addition {
+				width: 100%;
+				* {
+					font-size: $--fz_l;
+				}
+			}
+
+			&__text {
+				font-size: $--fz_xl;
+				margin-right: 2rem;
+			}
+
+			&_column {
+				.line__text {
+					width: 100%;
+					margin-bottom: 1.5rem;
+					margin-right: 0;
+				}
+			}
+
+			&__select {
+				select {
+					font-size: $--fz_l;
+					@include padding-sides(1.3rem, (top, bottom));
+				}
+			}
+
+			&_url {
+				.line__text {
+					margin-bottom: 1.5rem;
+				}
+			}
+
+			&_url,
+			&_signal,
+			&_test {
+				margin-top: 4rem;
+			}
+
+			&_pro {
+				margin-top: 2.5rem;
+			}
+
+			&_test,
+			&_pro {
+				select {
+					font-size: $--fz_xl;
+				}
+			}
+		}
+	}
+}
 </style>

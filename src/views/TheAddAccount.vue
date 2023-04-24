@@ -126,9 +126,10 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 		}
 
 		.accounts {
-			padding: 0 3rem 3rem; //?#
+			padding: 0 3rem 3rem;
 			display: flex;
 			justify-content: center;
+			border: 0;
 			@include border-sides(0.1rem, solid, $--c_grey-light, (bottom));
 
 			& > * + *,

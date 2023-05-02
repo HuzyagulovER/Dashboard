@@ -1,8 +1,8 @@
 <template>
-	<div class="settings-alert">
+	<div class="settings-alert" v-if="isActive === undefined ? false : isActive">
 		<div class="settings-alert__top-line top-line">
 			<p class="top-line__title">Alert Settings</p>
-			<div class="top-line__back">
+			<div class="top-line__back" @click="closeAlert">
 				<IconCorner class="top-line__corner" />
 			</div>
 		</div>
@@ -35,9 +35,19 @@
 </template>
 
 <script lang="ts" setup>
+/* eslint-disable */
 import IconCorner from "@/components/Icons/IconCorner.vue";
 import BaseCheckbox from "@/components/Elements/BaseCheckbox.vue";
 import BaseButton from "@/components/Elements/BaseButton.vue";
+
+let { isActive } = defineProps<{
+	isActive: boolean;
+}>();
+const emit = defineEmits(["close"]);
+
+function closeAlert() {
+	emit("close");
+}
 </script>
 
 <style lang="scss">
@@ -47,8 +57,10 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 	width: auto;
 	height: auto;
 	@include padding-sides(3rem, (right, bottom, left));
-	@include border(0.1rem, solid, white);
 	align-self: flex-start;
+	position: absolute;
+	background-color: $--c_main;
+	@include border0-radius(merge);
 
 	.top-line {
 		display: flex;
@@ -157,6 +169,7 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 			&__name {
 				margin-right: 1rem;
 				font-size: $--fz_m;
+				white-space: nowrap;
 			}
 
 			&__button {

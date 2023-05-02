@@ -10,6 +10,9 @@ a {
 select {
 	appearance: none;
 }
+input {
+	border-radius: 0;
+}
 
 .base-subbutton {
 	text-align: center;
@@ -54,7 +57,7 @@ select {
 	width: 100%;
 }
 .reg-form {
-	width: 450px;
+	width: 23vw;
 
 	&__input {
 		padding: 1.25rem 2.19rem;
@@ -118,6 +121,7 @@ select {
 .flex-column {
 	flex-direction: column;
 }
+
 .block {
 	&__item {
 		@include padding-sides(2rem, (top, bottom));
@@ -154,15 +158,6 @@ select {
 	&.p-l {
 		padding: 4rem 6rem;
 	}
-}
-.mt-s {
-	margin-top: 1rem;
-}
-.mt-l {
-	margin-top: 3rem !important;
-}
-.mt-m {
-	margin-top: 1.5rem !important;
 }
 .highlight-link.router-link-active {
 	color: $--c_yellow !important;
@@ -201,13 +196,16 @@ $font-sizes: (
 	}
 }
 
-@for $i from 1 through 5 {
+@for $i from 0 through 5 {
 	.mr-#{$i} {
-		margin-right: 1rem * $i;
+		margin-right: 1rem * $i !important;
+	}
+	.mt-#{$i} {
+		margin-top: 0.5rem * $i !important;
 	}
 }
 
-@for $i from 1 through 3 {
+@for $i from 0 through 3 {
 	@for $j from 1 through 3 {
 		.column-#{$i}-#{$j} {
 			grid-column: #{$i} / #{$j} !important;
@@ -215,22 +213,32 @@ $font-sizes: (
 	}
 }
 
-@for $i from 1 through 10 {
+@for $i from 0 through 10 {
 	.w-#{$i*10} {
 		width: $i * 10%;
 	}
-}
-
-@for $i from 1 through 10 {
 	.display-mxw-#{$i*10} {
 		max-width: $i * 10vw;
 	}
 }
 
 @media screen and (max-width: $--mobile-breakpoint) {
+	:root {
+		--checkbox-height: 2rem;
+	}
+
+	.mobile-flex-row {
+		flex-direction: row !important;
+		justify-content: flex-start !important;
+		align-items: center;
+	}
 	.block {
 		&__item {
 			@include padding-sides(2rem, (top, bottom));
+		}
+
+		.mobile-display-none {
+			display: none;
 		}
 
 		.item {
@@ -240,6 +248,10 @@ $font-sizes: (
 				}
 			}
 
+			.title {
+				font-size: $--fz_xl !important;
+			}
+
 			&__arrow {
 				width: 2rem;
 			}
@@ -247,13 +259,14 @@ $font-sizes: (
 
 		&__label {
 			margin-bottom: 0.5rem;
-			font-size: $--fz_m;
+			font-size: $--fz_l;
 		}
 
 		&__input.input,
-		.base-select__select {
+		.base-select__select,
+		.underlined-input {
 			@include padding-sides(0.7rem, (top, bottom));
-			font-size: $--fz_m !important;
+			font-size: $--fz_xm + 0.2rem !important;
 		}
 
 		&.p-l {
@@ -290,6 +303,35 @@ $font-sizes: (
 	.highlight-link.router-link-active {
 		&::before {
 			@include border-radius(merge);
+		}
+	}
+	.reg-form {
+		width: 70%;
+
+		&__input {
+			font-size: $--fz_xm;
+			padding: 2rem 2.3rem;
+		}
+
+		&__button {
+			font-size: $--fz_l;
+		}
+
+		&__subbutton {
+			font-size: $--fz_m;
+			padding: 0.5rem 1rem;
+		}
+	}
+
+	@for $i from 0 through 5 {
+		.mobile-mr-#{$i} {
+			margin-right: 1rem * $i;
+		}
+		.mobile-mt-#{$i} {
+			margin-top: 1rem * $i !important;
+		}
+		.mobile-mb-#{$i} {
+			margin-bottom: 1rem * $i;
 		}
 	}
 }

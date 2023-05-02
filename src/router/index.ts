@@ -2,6 +2,11 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
 	{
+		path: "/",
+		name: "Breakpoints",
+		component: () => import("@/views/TheBreakpoints.vue")
+	},
+	{
 		path: "/authorization",
 		name: "Authorization",
 		component: () => import("@/views/TheAuthorization.vue")
@@ -65,8 +70,7 @@ const routes: Array<RouteRecordRaw> = [
 			},
 			{
 				path: "deal",
-				// component: () => import("@/components/Settings/Views/SettingsDeal.vue")
-				component: () => import("@/components/Settings/Elements/SettingsAlert.vue")
+				component: () => import("@/components/Settings/Views/SettingsDeal.vue")
 			},
 			{
 				path: "gTrades",

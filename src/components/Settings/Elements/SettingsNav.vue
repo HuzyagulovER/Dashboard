@@ -100,7 +100,7 @@
 		margin-left: 2.5rem;
 
 		& ~ .settings-nav__subtitle {
-			margin-top: 1.5rem;
+			margin-top: 1.2rem;
 		}
 	}
 
@@ -112,7 +112,7 @@
 
 		&__link {
 			color: $--c_greyish-white;
-			font-size: $--fz_xm;
+			font-size: $--fz_m;
 			white-space: nowrap;
 			width: 100%;
 			padding: 0.8rem 0;
@@ -131,7 +131,7 @@
 			align-items: flex-start;
 
 			p {
-				font-size: $--fz_xm;
+				font-size: $--fz_m;
 				font-weight: bold;
 				margin-bottom: 0.5rem;
 			}

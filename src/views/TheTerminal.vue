@@ -15,7 +15,7 @@
 			class="terminal__mobile-menu mobile-menu"
 			:class="{ _active: isActiveBurger }"
 		/>
-		<div class="terminal__page-view page-view" style="grid-area: view">
+		<div class="terminal__page-view page-view">
 			<RouterView />
 		</div>
 	</main>
@@ -38,7 +38,8 @@ let isActiveBurger: Ref<boolean> = ref(false);
 	width: 100%;
 
 	&__page-view {
-		padding: 3.8rem 6.6rem;
+		padding: 2rem 6.6rem;
+		grid-area: view;
 	}
 
 	.block {
@@ -60,7 +61,7 @@ let isActiveBurger: Ref<boolean> = ref(false);
 	.page-view {
 		& > * {
 			display: grid;
-			row-gap: 3rem;
+			row-gap: 2rem;
 		}
 	}
 }
@@ -72,22 +73,33 @@ let isActiveBurger: Ref<boolean> = ref(false);
 			"view" 1fr / 1fr;
 
 		&__page-view {
-			padding: 3.8rem 6.6rem;
+			padding: 3.8rem 4.3rem;
 		}
 
 		.block {
 			padding: 1rem 3rem;
+			gap: 0;
 
 			.item {
-				padding: 2rem 3rem 2rem 1rem;
+				padding: 2rem 2rem 0;
 
 				& + .item {
-					padding: 2rem 2rem 2rem 3rem;
+					padding: 2rem 2rem 2rem;
 				}
 
 				.title {
 					font-size: $--fz_l;
 				}
+			}
+
+			.base-input {
+				padding: 1rem !important;
+			}
+
+			.underlined-input {
+				@include padding-sides(1rem, (right, left));
+				@include padding-sides(0.6rem, bottom);
+				@include padding-sides(0rem, top);
 			}
 		}
 
@@ -98,8 +110,8 @@ let isActiveBurger: Ref<boolean> = ref(false);
 			}
 		}
 
-		$top-mobile-menu-height: 5rem;
-		$top-mobile-menu-padding: 6rem;
+		$top-mobile-menu-height: 6rem;
+		$top-mobile-menu-padding: 2rem;
 		&__mobile-menu {
 			&.terminal-change {
 				top: 0 !important;
@@ -119,12 +131,12 @@ let isActiveBurger: Ref<boolean> = ref(false);
 			padding: 0 !important;
 			top: 0.3rem !important;
 			height: $top-mobile-menu-height !important;
-			left: $top-mobile-menu-padding * 1.32 / 3;
+			left: $top-mobile-menu-padding * 1.32;
 		}
 
 		.terminal-nav {
 			height: $top-mobile-menu-height;
-			padding: 0 $top-mobile-menu-padding 0 $top-mobile-menu-padding * 1.32;
+			padding: 0 $top-mobile-menu-padding 0 $top-mobile-menu-padding * 4;
 			border: 0;
 		}
 	}

@@ -15,19 +15,41 @@
 			<div class="freeze__checkbox">
 				<input type="checkbox" />
 				<div class="freeze__layout"></div>
-				<IconCorner class="freeze__tick" />
+				<IconTick class="freeze__tick" />
 			</div>
 		</div>
 		<div class="settings-topline__container">
-			<p class="settings-topline__alert-menu">Alert Menu</p>
+			<p
+				class="settings-topline__alert-menu"
+				@click="changeOpenAlertState(true)"
+			>
+				Alert Menu
+			</p>
 		</div>
+		<SettingsAlert
+			:isActive="openAlert"
+			@close="changeOpenAlertState(false)"
+			style="
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border: 0.1rem solid #fff;
+			"
+		/>
 	</div>
 </template>
 
 <script lang="ts" setup>
-import IconCorner from "@/components/Icons/IconCorner.vue";
-</script>
+import IconTick from "@/components/Icons/IconTick.vue";
+import SettingsAlert from "@/components/Settings/Elements/SettingsAlert.vue";
+import { ref, Ref } from "vue";
 
+let openAlert: Ref<boolean> = ref(false);
+
+function changeOpenAlertState(state: boolean): void {
+	openAlert.value = state;
+}
+</script>
 
 <style lang="scss" >
 .settings-topline {
@@ -81,7 +103,6 @@ import IconCorner from "@/components/Icons/IconCorner.vue";
 		&__checkbox {
 			width: 1.5rem;
 			height: 1.5rem;
-			cursor: pointer;
 			position: relative;
 
 			input {
@@ -109,6 +130,11 @@ import IconCorner from "@/components/Icons/IconCorner.vue";
 
 		&__tick {
 			visibility: hidden;
+			padding: 0.15rem;
+		}
+
+		input {
+			cursor: pointer;
 		}
 
 		input:checked ~ .freeze__tick {
@@ -127,8 +153,8 @@ import IconCorner from "@/components/Icons/IconCorner.vue";
 	&__alert-menu {
 		cursor: pointer;
 		background-color: $--c_grey;
-		padding: 1.2rem 2.2rem;
-		@include border0-radii(0, 0, medium, medium);
+		padding: 2.1rem 2rem 1.5rem;
+		@include border0-radii(0, 0, merge, merge);
 		font: {
 			size: $--fz_xm;
 			weight: bold;
@@ -140,7 +166,7 @@ import IconCorner from "@/components/Icons/IconCorner.vue";
 	.settings-topline {
 		display: grid;
 		grid-template: auto / auto auto;
-		row-gap: 2rem;
+		row-gap: 3rem;
 		padding: 0 6rem 3rem;
 
 		.inputs {
@@ -156,14 +182,14 @@ import IconCorner from "@/components/Icons/IconCorner.vue";
 			&__text {
 				margin-right: 0;
 				margin-bottom: 0.5rem;
-				font: {
-					size: $--fz_xm;
-				}
+				font-size: $--fz_l;
 			}
 
 			&__input {
-				font-size: $--fz_m;
-				width: 15rem;
+				font-size: $--fz_xm !important;
+				padding: 0.3rem 1rem;
+				width: 16rem;
+				height: auto;
 			}
 		}
 
@@ -175,11 +201,12 @@ import IconCorner from "@/components/Icons/IconCorner.vue";
 			&__text {
 				margin-bottom: 0.5rem;
 				margin-right: 0;
+				font-size: $--fz_l;
 			}
 
 			&__checkbox {
-				width: 1.8rem;
-				height: 1.8rem;
+				width: 2rem;
+				height: 2rem;
 			}
 		}
 

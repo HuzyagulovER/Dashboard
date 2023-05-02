@@ -7,14 +7,11 @@
 </template>
 
 <style lang="scss">
-$checkbox-height: 1.625rem;
-$checkbox-width: 3.75rem;
-
 .checkbox {
-	width: 3.75rem;
-	height: $checkbox-height;
+	width: calc(var(--checkbox-height) / 0.4333);
+	height: var(--checkbox-height);
 	position: relative;
-	border-radius: $checkbox-height/2;
+	border-radius: calc(var(--checkbox-height) / 2);
 	overflow: hidden;
 
 	&__layout,
@@ -34,8 +31,8 @@ $checkbox-width: 3.75rem;
 	&__toggler {
 		background-color: $--c_yellow;
 		border-radius: 50%;
-		height: $checkbox-height;
-		width: $checkbox-height;
+		height: var(--checkbox-height);
+		width: var(--checkbox-height);
 		transition: all 0.3s ease;
 	}
 

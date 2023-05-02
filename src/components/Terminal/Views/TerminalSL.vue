@@ -1,9 +1,11 @@
 <template>
 	<section class="terminal-open">
-		<BaseBlock class="block separated grid-column-2">
+		<BaseBlock class="block separated grid-column-2 break">
 			<div class="block__item item">
-				<div class="item__row flex-column">
-					<label class="block__label label" for="">Включен</label>
+				<div class="item__row flex-column mobile-flex-row">
+					<label class="block__label label mobile-mr-2 mobile-mb-0" for="">
+						Включен
+					</label>
 					<BaseCheckbox />
 				</div>
 				<div class="item__row flex-column">
@@ -11,14 +13,14 @@
 						<option value="1">От цены безубытка,%</option>
 					</BaseSelect>
 				</div>
-				<div class="item__row flex-column mt-l">
+				<div class="item__row flex-column mt-2">
 					<input type="text" class="underlined-input" />
 				</div>
 			</div>
 			<div class="block__item item">
 				<div class="item__row justify-start flex-column">
 					<label class="block__label label pr-m" for="">Цена СЛ точная</label>
-					<input class="underlined-input mt-s" type="text" />
+					<input class="underlined-input mt-1" type="text" />
 				</div>
 				<div class="item__row justify-start flex-column">
 					<label class="block__label label pr-m" for="">Тип ордера</label>
@@ -26,7 +28,7 @@
 				</div>
 			</div>
 		</BaseBlock>
-		<BaseBlock class="block separated grid-column-2">
+		<BaseBlock class="block separated grid-column-2 break">
 			<div class="block__item item">
 				<div class="item__row justify-start flex-column">
 					<label class="block__label label pr-m" for="">

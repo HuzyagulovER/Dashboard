@@ -129,12 +129,14 @@
 					<label class="block__label label" for="">Объем</label>
 					<input class="block__input input base-input" type="text" />
 				</div>
-				<div class="item__row justify-start">
-					<label class="block__label label mr-2" for="">Включен</label>
+				<div class="item__row justify-start align-center">
+					<label class="block__label label mr-2 mobile-mb-0" for=""
+						>Включен</label
+					>
 					<BaseCheckbox />
 				</div>
-				<div class="item__row justify-start">
-					<label class="block__label label mr-2" for=""
+				<div class="item__row justify-start align-center">
+					<label class="block__label label mr-2 mobile-mb-0" for=""
 						>Включен безубыток</label
 					>
 					<BaseCheckbox />
@@ -159,12 +161,14 @@
 					<label class="block__label label" for="">Объем</label>
 					<input class="block__input input base-input" type="text" />
 				</div>
-				<div class="item__row justify-start">
-					<label class="block__label label mr-2" for="">Включен</label>
+				<div class="item__row justify-start align-center">
+					<label class="block__label label mr-2 mobile-mb-0" for=""
+						>Включен</label
+					>
 					<BaseCheckbox />
 				</div>
-				<div class="item__row justify-start">
-					<label class="block__label label mr-2" for=""
+				<div class="item__row justify-start align-center">
+					<label class="block__label label mr-2 mobile-mb-0" for=""
 						>Включен безубыток</label
 					>
 					<BaseCheckbox />
@@ -189,12 +193,14 @@
 					<label class="block__label label" for="">Объем</label>
 					<input class="block__input input base-input" type="text" />
 				</div>
-				<div class="item__row justify-start">
-					<label class="block__label label mr-2" for="">Включен</label>
+				<div class="item__row justify-start align-center">
+					<label class="block__label label mr-2 mobile-mb-0" for=""
+						>Включен</label
+					>
 					<BaseCheckbox />
 				</div>
-				<div class="item__row justify-start">
-					<label class="block__label label mr-2" for=""
+				<div class="item__row justify-start align-center">
+					<label class="block__label label mr-2 mobile-mb-0" for=""
 						>Включен безубыток</label
 					>
 					<BaseCheckbox />
@@ -270,12 +276,14 @@
 					<label class="block__label label" for="">Объем</label>
 					<input class="block__input input base-input" type="text" />
 				</div>
-				<div class="item__row justify-start">
-					<label class="block__label label mr-2" for="">Включен</label>
+				<div class="item__row justify-start align-center">
+					<label class="block__label label mr-2 mobile-mb-0" for=""
+						>Включен</label
+					>
 					<BaseCheckbox />
 				</div>
-				<div class="item__row justify-start">
-					<label class="block__label label mr-2" for=""
+				<div class="item__row justify-start align-center">
+					<label class="block__label label mr-2 mobile-mb-0" for=""
 						>Включен безубыток</label
 					>
 					<BaseCheckbox />
@@ -300,12 +308,14 @@
 					<label class="block__label label" for="">Объем</label>
 					<input class="block__input input base-input" type="text" />
 				</div>
-				<div class="item__row justify-start">
-					<label class="block__label label mr-2" for="">Включен</label>
+				<div class="item__row justify-start align-center">
+					<label class="block__label label mr-2 mobile-mb-0" for=""
+						>Включен</label
+					>
 					<BaseCheckbox />
 				</div>
-				<div class="item__row justify-start">
-					<label class="block__label label mr-2" for=""
+				<div class="item__row justify-start align-center">
+					<label class="block__label label mr-2 mobile-mb-0" for=""
 						>Включен безубыток</label
 					>
 					<BaseCheckbox />
@@ -330,12 +340,14 @@
 					<label class="block__label label" for="">Объем</label>
 					<input class="block__input input base-input" type="text" />
 				</div>
-				<div class="item__row justify-start">
-					<label class="block__label label mr-2" for="">Включен</label>
+				<div class="item__row justify-start align-center">
+					<label class="block__label label mr-2 mobile-mb-0" for=""
+						>Включен</label
+					>
 					<BaseCheckbox />
 				</div>
-				<div class="item__row justify-start">
-					<label class="block__label label mr-2" for=""
+				<div class="item__row justify-start align-center">
+					<label class="block__label label mr-2 mobile-mb-0" for=""
 						>Включен безубыток</label
 					>
 					<BaseCheckbox />
@@ -408,14 +420,28 @@ import IconArrowRtl from "@/components/Icons/IconArrowRtl.vue";
 				}
 			}
 
+			.block {
+				&__label {
+					font-size: $--fz_m;
+				}
+
+				.item {
+					.title {
+						font: {
+							size: $--fz_l !important;
+						}
+					}
+				}
+			}
+
 			.buttons {
 				grid-column: 1/3 !important;
 				justify-content: space-around;
 
 				&__button {
 					width: auto;
-					padding: 1.5rem 3.5rem;
-					margin: 0;
+					padding: 1.5rem 3.5rem !important;
+					margin: 0 !important;
 					line-height: $--fz_m;
 					font: {
 						size: $--fz_m;

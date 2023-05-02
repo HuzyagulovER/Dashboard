@@ -1,5 +1,5 @@
 <template>
-	<p class="base-button" @click.prevent="false">
+	<p class="base-button">
 		<slot />
 	</p>
 </template>
@@ -16,7 +16,7 @@
 	white-space: nowrap;
 	font: {
 		size: $--fz_xm;
-		family: "Gilroy_B";
+		family: "Gilroy_S";
 	}
 
 	&.rounded {

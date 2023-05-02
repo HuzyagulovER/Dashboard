@@ -22,7 +22,7 @@
 				<p>Подписки</p>
 			</RouterLink>
 
-			<RouterLink class="menu-nav__link highlight-link mt-s" to="/menu/2fa">
+			<RouterLink class="menu-nav__link highlight-link mt-1" to="/menu/2fa">
 				<div class="menu-nav__icon">
 					<Icon2FA />
 				</div>
@@ -30,7 +30,7 @@
 			</RouterLink>
 
 			<RouterLink
-				class="menu-nav__link highlight-link mt-s"
+				class="menu-nav__link highlight-link mt-1"
 				to="/menu/telegram-bot"
 			>
 				<div class="menu-nav__icon">
@@ -40,7 +40,7 @@
 			</RouterLink>
 
 			<RouterLink
-				class="menu-nav__link highlight-link mt-s"
+				class="menu-nav__link highlight-link mt-1"
 				to="/menu/telegram-bot-create"
 			>
 				<div class="menu-nav__icon">
@@ -70,7 +70,7 @@
 				<p>Перезагрузить аккаунт</p>
 			</RouterLink>
 
-			<div class="menu-nav__line mt-l">
+			<div class="menu-nav__line mt-3">
 				<RouterLink
 					class="menu-nav__link highlight-link out-link"
 					to="/menu/false"

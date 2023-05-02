@@ -101,6 +101,20 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 	&__form {
 		grid-area: form;
 	}
+
+	.form {
+		.buttons {
+			&__button {
+				padding: 1.5rem 1.2rem;
+			}
+		}
+
+		.block {
+			.input {
+				font-size: $--fz_m !important;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: $--mobile-breakpoint) {

@@ -1,9 +1,11 @@
 <template>
-	<section class="terminal-open">
-		<BaseBlock class="block separated grid-column-2">
+	<section class="terminal-close">
+		<BaseBlock class="block separated grid-column-2 break">
 			<div class="block__item item">
-				<div class="item__row flex-column">
-					<label class="block__label label" for="">Включен</label>
+				<div class="item__row flex-column mobile-flex-row">
+					<label class="block__label label mobile-mr-2 mobile-mb-0" for="">
+						Включен
+					</label>
 					<BaseCheckbox />
 				</div>
 				<div class="item__row flex-column">
@@ -32,17 +34,17 @@
 				</div>
 			</div>
 		</BaseBlock>
-		<p class="terminal-open__notice">
+		<p class="terminal-close__notice">
 			Внимание! Следующая опция работает со ВСЕМИ открытыми позициями в
 			аккаунте. Если этот параметр включен и полечен сигнал, то все открытые
 			позиции будут закрыты (согласно нацстройки “Тип позиции”)
 		</p>
-		<BaseBlock class="block separated grid-column-2">
+		<BaseBlock class="block separated grid-column-2 break">
 			<div class="block__item item">
-				<div class="item__row">
+				<div class="item__row mobile-display-none">
 					<p class="title">&nbsp;</p>
 				</div>
-				<div class="item__row justify-start">
+				<div class="item__row justify-start mobile-mt-0 mobile-flex-row">
 					<label class="block__label label pr-m" for="">
 						Закрыть все позиции
 					</label>
@@ -53,7 +55,7 @@
 				<div class="item__row">
 					<p class="title">Ограничения</p>
 				</div>
-				<div class="item__row justify-start">
+				<div class="item__row justify-start mobile-flex-row">
 					<label class="block__label label pr-m" for="">
 						Проверять прибыль
 					</label>
@@ -69,9 +71,8 @@ import BaseBlock from "@/components/Elements/BaseBlock.vue";
 import BaseCheckbox from "@/components/Elements/BaseCheckbox.vue";
 </script>
 
-
 <style lang="scss" >
-.terminal-open {
+.terminal-close {
 	&__notice {
 		font-size: $--fz_s;
 		color: $--c_yellow;
@@ -81,6 +82,15 @@ import BaseCheckbox from "@/components/Elements/BaseCheckbox.vue";
 	.block {
 		.pr-m {
 			padding-right: 1.5rem;
+		}
+	}
+}
+
+@media screen and (max-width: $--mobile-breakpoint) {
+	.terminal-close {
+		&__notice {
+			font-size: $--fz_m;
+			padding: 0 2.5rem;
 		}
 	}
 }

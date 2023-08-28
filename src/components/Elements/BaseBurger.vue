@@ -7,18 +7,20 @@
 </template>
 
 <script lang="ts" setup>
-/* eslint-disable */
-import { inject, ref, Ref, watch } from "vue";
+import { ref, Ref, watch, toRefs } from "vue";
 import { useRoute } from "vue-router";
 
 const props = defineProps<{
 	initValue: boolean;
 }>();
+const { initValue } = toRefs(props)
 const route = useRoute();
-const emit = defineEmits(["toggle"]);
+const emit = defineEmits<{
+	toggle: [isActive: boolean]
+}>();
 
 let isActiveBurger: Ref<boolean> = ref(false);
-isActiveBurger.value = props.initValue;
+isActiveBurger.value = initValue.value;
 
 watch(
 	() => route.path,
@@ -36,7 +38,9 @@ function toggleMenu(): void {
 
 
 <style lang="scss" >
+@import "@/assets/scss/_variables.scss";
 $burger-width: 3rem;
+
 .burger {
 	display: none;
 	width: $burger-width;
@@ -53,6 +57,7 @@ $burger-width: 3rem;
 		background-color: $--c_yellow;
 	}
 }
+
 @media screen and (max-width: $--mobile-breakpoint) {
 	.burger {
 		display: flex;

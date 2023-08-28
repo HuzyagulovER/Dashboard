@@ -1,5 +1,5 @@
 <template>
-	<div class="settings-alert" v-if="isActive === undefined ? false : isActive">
+	<div class="settings-alert popup">
 		<div class="settings-alert__top-line top-line">
 			<p class="top-line__title">Alert Settings</p>
 			<div class="top-line__back" @click="closeAlert">
@@ -35,15 +35,13 @@
 </template>
 
 <script lang="ts" setup>
-/* eslint-disable */
 import IconCorner from "@/components/Icons/IconCorner.vue";
 import BaseCheckbox from "@/components/Elements/BaseCheckbox.vue";
 import BaseButton from "@/components/Elements/BaseButton.vue";
 
-let { isActive } = defineProps<{
-	isActive: boolean;
+const emit = defineEmits<{
+	close: []
 }>();
-const emit = defineEmits(["close"]);
 
 function closeAlert() {
 	emit("close");
@@ -51,16 +49,19 @@ function closeAlert() {
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/_mixins.scss";
+
 .settings-alert {
 	display: inline-flex;
 	flex-direction: column;
 	width: auto;
 	height: auto;
-	@include padding-sides(3rem, (right, bottom, left));
+	@include padding-sides(2.5rem, (right, bottom, left));
 	align-self: flex-start;
 	position: absolute;
 	background-color: $--c_main;
-	@include border0-radius(merge);
+	@include border-radius(merge);
 
 	.top-line {
 		display: flex;
@@ -73,6 +74,7 @@ function closeAlert() {
 			padding: 1.2rem 2.2rem;
 			@include border0-radii(0, 0, medium, medium);
 			margin-right: 2rem;
+
 			font: {
 				weight: bold;
 				size: $--fz_m;

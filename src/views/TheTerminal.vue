@@ -1,20 +1,11 @@
 <template>
 	<main class="terminal">
 		<div class="terminal__burger-container burger-container">
-			<BaseBurger
-				:init-value="isActiveBurger"
-				@toggle="(is) => (isActiveBurger = is)"
-			/>
+			<BaseBurger :init-value="isActiveBurger" @toggle="(is) => (isActiveBurger = is)" />
 		</div>
 		<TerminalNavPanel />
-		<TerminalChangePanel
-			class="terminal__mobile-menu mobile-menu"
-			:class="{ _active: isActiveBurger }"
-		/>
-		<TerminalSettingsPanel
-			class="terminal__mobile-menu mobile-menu"
-			:class="{ _active: isActiveBurger }"
-		/>
+		<TerminalChangePanel class="terminal__mobile-menu mobile-menu" :class="{ _active: isActiveBurger }" />
+		<TerminalSettingsPanel class="terminal__mobile-menu mobile-menu" :class="{ _active: isActiveBurger }" />
 		<div class="terminal__page-view page-view">
 			<RouterView />
 		</div>
@@ -32,6 +23,9 @@ let isActiveBurger: Ref<boolean> = ref(false);
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_mixins.scss";
+@import "@/assets/scss/_variables.scss";
+
 .terminal {
 	@include grid-area((change, nav, settings, view), (6.25rem));
 	height: 100%;
@@ -48,7 +42,7 @@ let isActiveBurger: Ref<boolean> = ref(false);
 		.item {
 			padding: 2rem 3rem 2rem 1rem;
 
-			& + .item {
+			&+.item {
 				padding: 2rem 2rem 2rem 3rem;
 			}
 
@@ -59,7 +53,7 @@ let isActiveBurger: Ref<boolean> = ref(false);
 	}
 
 	.page-view {
-		& > * {
+		&>* {
 			display: grid;
 			row-gap: 2rem;
 		}
@@ -83,7 +77,7 @@ let isActiveBurger: Ref<boolean> = ref(false);
 			.item {
 				padding: 2rem 2rem 0;
 
-				& + .item {
+				&+.item {
 					padding: 2rem 2rem 2rem;
 				}
 
@@ -104,7 +98,7 @@ let isActiveBurger: Ref<boolean> = ref(false);
 		}
 
 		.page-view {
-			& > * {
+			&>* {
 				display: grid;
 				row-gap: 3rem;
 			}
@@ -112,6 +106,7 @@ let isActiveBurger: Ref<boolean> = ref(false);
 
 		$top-mobile-menu-height: 6rem;
 		$top-mobile-menu-padding: 2rem;
+
 		&__mobile-menu {
 			&.terminal-change {
 				top: 0 !important;

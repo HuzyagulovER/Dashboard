@@ -16,9 +16,17 @@ import IconCorner from "@/components/Icons/IconCorner.vue";
 
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/_mixins.scss";
+
 .base-select {
 	position: relative;
 	color: $--c_whitish-grey;
+	cursor: pointer;
+
+	select {
+		cursor: pointer;
+	}
 
 	&.yellow-border {
 		border: 0 !important;
@@ -45,11 +53,20 @@ import IconCorner from "@/components/Icons/IconCorner.vue";
 
 	& &__select {
 		font-size: inherit;
-		padding: 0.8rem 2.8rem 0.8rem 0.8rem;
+		padding: 1.1rem 2.8rem 1.1rem 0.8rem;
 		color: inherit;
 
 		option {
 			font-size: inherit;
+		}
+	}
+
+
+	&.underlined-input {
+		@include border-sides(.1rem, solid, $--c_grey-light, (bottom));
+
+		* {
+			background-color: transparent;
 		}
 	}
 }

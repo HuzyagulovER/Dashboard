@@ -5,25 +5,16 @@
 				Подключив Телеграм бота, вы сможете получать уведомления от Finandy.
 				Также мы планируем реализовать торговлю через Телеграм.
 				<br />
-				<span class="yellow"
-					>Если у вас уже есть Телеграм бот, то просто добавьте его токен на 5
-					шаге и нажмите “Подключить телеграм бота”.</span
-				>
+				<span class="yellow">Если у вас уже есть Телеграм бот, то просто добавьте его токен на 5
+					шаге и нажмите “Подключить телеграм бота”.</span>
 			</p>
 		</div>
 		<div class="menu-telegram-bot-create__container">
-			<BaseBlock
-				class="menu-telegram-bot-create__block block menu-telegram-bot-create__step-1 step"
-			>
+			<BaseBlock class="menu-telegram-bot-create__block block menu-telegram-bot-create__step-1 step">
 				<div class="block__item item">
 					<div class="item__row justify-center">
 						<div class="step__image">
-							<img
-								src="@/assets/images/Empty.png"
-								alt=""
-								width="284"
-								height="169"
-							/>
+							<img src="@/assets/images/Empty.png" alt="" width="284" height="169" />
 						</div>
 					</div>
 				</div>
@@ -45,18 +36,11 @@
 			</BaseBlock>
 
 			<div class="menu-telegram-bot-create__wrapper">
-				<BaseBlock
-					class="menu-telegram-bot-create__block block grid-column-2 menu-telegram-bot-create__step-2 step"
-				>
+				<BaseBlock class="menu-telegram-bot-create__block block grid-column-2 menu-telegram-bot-create__step-2 step">
 					<div class="block__item item">
 						<div class="item__row justify-center">
 							<div class="step__image">
-								<img
-									src="@/assets/images/Empty.png"
-									alt=""
-									width="284"
-									height="169"
-								/>
+								<img src="@/assets/images/Empty.png" alt="" width="284" height="169" />
 							</div>
 						</div>
 					</div>
@@ -69,18 +53,11 @@
 						</div>
 					</div>
 				</BaseBlock>
-				<BaseBlock
-					class="menu-telegram-bot-create__block block grid-column-2 menu-telegram-bot-create__step-3 step"
-				>
+				<BaseBlock class="menu-telegram-bot-create__block block grid-column-2 menu-telegram-bot-create__step-3 step">
 					<div class="block__item item">
 						<div class="item__row justify-center">
 							<div class="step__image">
-								<img
-									src="@/assets/images/Empty.png"
-									alt=""
-									width="284"
-									height="169"
-								/>
+								<img src="@/assets/images/Empty.png" alt="" width="284" height="169" />
 							</div>
 						</div>
 					</div>
@@ -93,18 +70,11 @@
 						</div>
 					</div>
 				</BaseBlock>
-				<BaseBlock
-					class="menu-telegram-bot-create__block block grid-column-2 menu-telegram-bot-create__step-4 step"
-				>
+				<BaseBlock class="menu-telegram-bot-create__block block grid-column-2 menu-telegram-bot-create__step-4 step">
 					<div class="block__item item">
 						<div class="item__row justify-center">
 							<div class="step__image">
-								<img
-									src="@/assets/images/Empty.png"
-									alt=""
-									width="284"
-									height="169"
-								/>
+								<img src="@/assets/images/Empty.png" alt="" width="284" height="169" />
 							</div>
 						</div>
 					</div>
@@ -117,18 +87,11 @@
 						</div>
 					</div>
 				</BaseBlock>
-				<BaseBlock
-					class="menu-telegram-bot-create__block block grid-column-2 menu-telegram-bot-create__step-5 step"
-				>
+				<BaseBlock class="menu-telegram-bot-create__block block grid-column-2 menu-telegram-bot-create__step-5 step">
 					<div class="block__item item">
 						<div class="item__row justify-center">
 							<div class="step__image">
-								<img
-									src="@/assets/images/Empty.png"
-									alt=""
-									width="284"
-									height="169"
-								/>
+								<img src="@/assets/images/Empty.png" alt="" width="284" height="169" />
 							</div>
 						</div>
 					</div>
@@ -140,11 +103,7 @@
 							<p class="step__text">Скопируйте Токен бота в поле ниже</p>
 						</div>
 						<div class="item__row">
-							<input
-								type="text"
-								class="underlined-input step__input"
-								placeholder="Вставьте токен бота здесь"
-							/>
+							<input type="text" class="underlined-input step__input" placeholder="Вставьте токен бота здесь" />
 						</div>
 					</div>
 				</BaseBlock>
@@ -162,6 +121,9 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/_mixins.scss";
+
 .menu-telegram-bot-create {
 	padding: 0;
 
@@ -172,6 +134,7 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 		p {
 			font-size: calc($--fz_xm - 0.2rem);
 		}
+
 		span {
 			font-size: inherit;
 		}
@@ -204,7 +167,7 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 		.item {
 			padding: 0;
 
-			&__row + .item__row {
+			&__row+.item__row {
 				margin-top: 1rem;
 			}
 		}

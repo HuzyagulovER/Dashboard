@@ -4,6 +4,8 @@
 </template>
 
 <style lang="scss">
+@import "@/assets/scss/index.scss";
+
 * {
 	margin: 0;
 	padding: 0;
@@ -53,6 +55,7 @@ body {
 }
 
 @media screen and (max-width: $--mobile-breakpoint) {
+
 	html,
 	body,
 	#app {

@@ -1,9 +1,6 @@
 <template>
 	<div class="g-volume">
-		<SettingsGraph />
-		<SettingsGraph />
-		<SettingsGraph />
-		<SettingsGraph />
+		<SettingsGraph v-for="i in 9" :key="i" />
 	</div>
 </template>
 
@@ -12,18 +9,22 @@ import SettingsGraph from "@/components/Settings/Elements/SettingsGraph.vue";
 </script>
 
 <style lang="scss" >
+@import "@/assets/scss/_variables.scss";
+
 .g-volume {
 	width: 100%;
 	display: grid;
-	grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-	gap: 3rem 0;
+	grid-template: 1fr / repeat(3, 1fr);
+	gap: 3rem 2rem;
 	padding: 2.5rem 1.5rem;
 
-	& > * {
+	&>* {
 		align-self: center;
 		margin: 0 auto;
-		width: 34.38rem;
-		height: 22.75rem;
+		// width: 34.38rem;
+		// height: 22.75rem;
+		width: 100%;
+		height: 100%;
 	}
 }
 
@@ -33,7 +34,7 @@ import SettingsGraph from "@/components/Settings/Elements/SettingsGraph.vue";
 		gap: 3rem 2rem;
 		padding: 4rem 3rem;
 
-		& > * {
+		&>* {
 			width: 100%;
 			height: auto;
 		}

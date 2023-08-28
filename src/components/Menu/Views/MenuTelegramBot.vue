@@ -1,16 +1,9 @@
 <template>
 	<section class="menu-telegram-bot">
-		<BaseBlock
-			class="menu-telegram-bot__block block separated break grid-column-2 bot-info"
-		>
+		<BaseBlock class="menu-telegram-bot__block block separated break grid-column-2 bot-info">
 			<div class="block__item item">
 				<div class="item__row justify-center bot-info__image-container">
-					<img
-						src="@/assets/images/ImageTelegram.png"
-						alt=""
-						width="404"
-						height="246"
-					/>
+					<img src="@/assets/images/ImageTelegram.png" alt="" width="404" height="246" />
 				</div>
 			</div>
 			<div class="block__item item">
@@ -30,20 +23,14 @@
 				</div>
 			</div>
 		</BaseBlock>
-		<BaseBlock
-			class="menu-telegram-bot__block block separated break grid-column-2 bot-change"
-		>
+		<BaseBlock class="menu-telegram-bot__block block separated break grid-column-2 bot-change">
 			<div class="block__item item">
 				<div class="item__row flex-column">
 					<p class="title">Отключить телеграмм-бота</p>
 					<p>&nbsp;</p>
 				</div>
 				<div class="item__row justify-start">
-					<input
-						class="underlined-input"
-						type="text"
-						placeholder="Код из телеграмма"
-					/>
+					<input class="underlined-input" type="text" placeholder="Код из телеграмма" />
 					<BaseButton class="small-button">отправить код</BaseButton>
 				</div>
 				<div class="item__row justify-start">
@@ -53,16 +40,10 @@
 			<div class="block__item item">
 				<div class="item__row flex-column">
 					<p class="title">Удалить телеграмм-бота</p>
-					<RouterLink to="" class="no-access"
-						>Нет доступа к телеграмм-боту?</RouterLink
-					>
+					<RouterLink to="" class="no-access">Нет доступа к телеграмм-боту?</RouterLink>
 				</div>
 				<div class="item__row justify-start">
-					<input
-						class="underlined-input"
-						type="text"
-						placeholder="Код из телеграмма"
-					/>
+					<input class="underlined-input" type="text" placeholder="Код из телеграмма" />
 					<BaseButton class="small-button">отправить код</BaseButton>
 				</div>
 				<div class="item__row justify-start">
@@ -79,6 +60,9 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/_mixins.scss";
+
 .menu-telegram-bot {
 	.block {
 		@include padding-sides(5rem, (left, right));
@@ -95,13 +79,16 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 				weight: normal;
 			}
 		}
+
 		.input {
 			width: 70%;
 		}
+
 		.list-title {
 			font-size: $--fz_xm;
 			margin-bottom: 0.8rem;
 		}
+
 		.list {
 			list-style-position: inside;
 
@@ -126,7 +113,7 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 		.item {
 			padding: 2rem 2rem 2rem 1rem;
 
-			& + .item {
+			&+.item {
 				padding: 2rem 1rem 2rem 3rem;
 			}
 
@@ -171,7 +158,8 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 		.block {
 			@include padding-sides(5rem, (left, right));
 			margin-bottom: 0;
-			& + .block {
+
+			&+.block {
 				margin-top: 3rem;
 			}
 		}
@@ -184,15 +172,18 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 					size: $--fz_xl !important;
 				}
 			}
+
 			.input {
 				width: unset;
 				font-size: $--fz_xm;
 				padding: 1rem;
 			}
+
 			.list-title {
 				font-size: $--fz_xl;
 				margin-bottom: 0.8rem;
 			}
+
 			.list {
 				li {
 					font-size: $--fz_xm + 0.15rem;

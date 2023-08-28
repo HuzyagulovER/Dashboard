@@ -26,6 +26,9 @@ import IconTrash from "@/components/Icons/IconTrash.vue";
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_mixins.scss";
+@import "@/assets/scss/_variables.scss";
+
 .terminal-change {
 	display: flex;
 	justify-content: space-around;
@@ -37,7 +40,7 @@ import IconTrash from "@/components/Icons/IconTrash.vue";
 	}
 
 	&__icon-container {
-		& + & {
+		&+& {
 			margin-left: 1rem;
 		}
 	}
@@ -51,6 +54,7 @@ import IconTrash from "@/components/Icons/IconTrash.vue";
 		color: $--c_yellow;
 		@include border-radius(merge);
 		padding: 0.81rem 1.75rem;
+
 		font: {
 			family: "Gilroy_R";
 		}
@@ -70,7 +74,7 @@ import IconTrash from "@/components/Icons/IconTrash.vue";
 			height: 3.4rem;
 			padding: 0.7rem;
 
-			& + & {
+			&+& {
 				margin-left: 1rem;
 			}
 		}

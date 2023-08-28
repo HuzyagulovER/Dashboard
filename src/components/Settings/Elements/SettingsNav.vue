@@ -24,53 +24,55 @@
 			</div>
 			<p class="settings-nav__subtitle">Временные рамки</p>
 			<div class="settings-nav__line line">
-				<RouterLink
-					class="line__link highlight-link"
-					to="/settings/choose-time"
-				>
+				<RouterLink class="line__link highlight-link" to="/settings/choose-time">
 					<p>Выбрать время</p>
 				</RouterLink>
 			</div>
 			<p class="settings-nav__subtitle">Количество</p>
 			<div class="settings-nav__line line">
-				<RouterLink
-					class="line__link highlight-link"
-					to="/settings/choose-amount"
-				>
+				<RouterLink class="line__link highlight-link" to="/settings/choose-amount">
 					<p>Выбрать количество</p>
 				</RouterLink>
 			</div>
 			<p class="settings-nav__subtitle">Стретегии</p>
 			<div class="settings-nav__line line">
-				<RouterLink
-					class="line__link highlight-link"
-					to="/settings/all-strategies"
-				>
+				<RouterLink class="line__link line_strategy highlight-link" to="/settings/all-strategies">
 					<p>Все</p>
 				</RouterLink>
 			</div>
 			<div class="settings-nav__line line">
-				<RouterLink
-					class="line__link highlight-link"
-					to="/settings/rollback-strategy"
-				>
+				<RouterLink class="line__link line_strategy highlight-link" to="/settings/rollback-strategy">
 					<p>Откат</p>
 				</RouterLink>
 			</div>
 			<div class="settings-nav__line line">
-				<RouterLink
-					class="line__link highlight-link"
-					to="/settings/flat-strategy"
-				>
+				<RouterLink class="line__link line_strategy highlight-link" to="/settings/flat-strategy">
 					<p>Флэт</p>
 				</RouterLink>
 			</div>
 			<div class="settings-nav__line line">
-				<RouterLink
-					class="line__link highlight-link"
-					to="/settings/katana-strategy"
-				>
+				<RouterLink class="line__link line_strategy highlight-link" to="/settings/katana-strategy">
 					<p>Катана</p>
+				</RouterLink>
+			</div>
+			<div class="settings-nav__line line">
+				<RouterLink class="line__link line_strategy highlight-link" to="/settings/geisha-strategy">
+					<p>Geisha</p>
+				</RouterLink>
+			</div>
+			<div class="settings-nav__line line">
+				<RouterLink class="line__link line_strategy highlight-link" to="/settings/musashi-strategy">
+					<p>Musashi</p>
+				</RouterLink>
+			</div>
+			<div class="settings-nav__line line">
+				<RouterLink class="line__link line_strategy highlight-link" to="/settings/supertrend-strategy">
+					<p>Supertrend</p>
+				</RouterLink>
+			</div>
+			<div class="settings-nav__line line">
+				<RouterLink class="line__link line_strategy highlight-link" to="/settings/alphatrend-strategy">
+					<p>Alphatrend</p>
 				</RouterLink>
 			</div>
 			<div class="settings-nav__line line flex-column line_filter">
@@ -86,6 +88,9 @@
 
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/_mixins.scss";
+
 .settings-nav {
 	grid-area: settings;
 	@include border-sides(0.1rem, solid, $--c_grey-light, [right]);
@@ -99,8 +104,8 @@
 		text-transform: uppercase;
 		margin-left: 2.5rem;
 
-		& ~ .settings-nav__subtitle {
-			margin-top: 1.2rem;
+		&~.settings-nav__subtitle {
+			margin-top: 1rem;
 		}
 	}
 
@@ -115,7 +120,7 @@
 			font-size: $--fz_m;
 			white-space: nowrap;
 			width: 100%;
-			padding: 0.8rem 0;
+			padding: 0.55rem 0;
 			display: flex;
 
 			p {
@@ -143,17 +148,22 @@
 				height: 2.5rem;
 			}
 		}
+
+		&_strategy {
+			padding: 0.4rem 0;
+		}
 	}
 }
 
 @media screen and (max-width: $--mobile-breakpoint) {
 	.settings-nav {
+		padding: 5rem;
 		padding-top: 10rem !important;
 
 		&__subtitle {
 			font-size: $--fz_xm;
 
-			& ~ .settings-nav__subtitle {
+			&~.settings-nav__subtitle {
 				margin-top: 1.5rem;
 			}
 		}
@@ -161,25 +171,31 @@
 		.line {
 			&__link {
 				font-size: $--fz_xl + 0.2rem;
-				padding: 1.8rem 0;
+				padding: 1.5rem 0;
 
 				p {
 					margin-left: 5rem;
 				}
 			}
 
+			&_strategy {
+				padding: 1.3rem 0;
+			}
+
 			&_filter {
 				margin-top: 3rem;
 
 				p {
-					font-size: $--fz_xl;
-					margin-bottom: 1rem;
+					font-size: calc($--fz_xl + .1rem);
+					margin-bottom: 1.5rem;
 				}
 
 				input {
 					height: auto;
-					font-size: $--fz_l;
+					font-size: calc($--fz_l + .2rem);
 					padding: 0.8rem 1rem;
+					width: 80%;
+					@include border-radius(medium);
 				}
 			}
 		}

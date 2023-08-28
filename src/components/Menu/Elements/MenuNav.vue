@@ -29,20 +29,14 @@
 				<p>2FA</p>
 			</RouterLink>
 
-			<RouterLink
-				class="menu-nav__link highlight-link mt-1"
-				to="/menu/telegram-bot"
-			>
+			<RouterLink class="menu-nav__link highlight-link mt-1" to="/menu/telegram-bot">
 				<div class="menu-nav__icon">
 					<IconTelegram />
 				</div>
 				<p>Телеграмм-бот</p>
 			</RouterLink>
 
-			<RouterLink
-				class="menu-nav__link highlight-link mt-1"
-				to="/menu/telegram-bot-create"
-			>
+			<RouterLink class="menu-nav__link highlight-link mt-1" to="/menu/telegram-bot-create">
 				<div class="menu-nav__icon">
 					<IconChangePass />
 				</div>
@@ -71,10 +65,7 @@
 			</RouterLink>
 
 			<div class="menu-nav__line mt-3">
-				<RouterLink
-					class="menu-nav__link highlight-link out-link"
-					to="/menu/false"
-				>
+				<RouterLink class="menu-nav__link highlight-link out-link" to="/menu/false">
 					<div class="menu-nav__icon">
 						<IconOut />
 					</div>
@@ -99,6 +90,9 @@ import IconTelegram from "@/components/Icons/IconTelegram.vue";
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/_mixins.scss";
+
 $link-margin-left: 2.4rem;
 $link-padding-vertical: 1rem;
 $link-padding-horizontal: 1rem;
@@ -131,7 +125,7 @@ $icon-size: 1.8rem;
 			background-color: $--c_whitish-grey;
 		}
 
-		& > * {
+		&>* {
 			width: 100%;
 			height: 100%;
 			fill: $--c_white;
@@ -162,9 +156,11 @@ $icon-size: 1.8rem;
 					background-color: $--c_yellow !important;
 				}
 			}
+
 			svg {
 				fill: $--c_yellow !important;
 			}
+
 			p {
 				color: $--c_yellow !important;
 			}

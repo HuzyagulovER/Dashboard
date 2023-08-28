@@ -24,14 +24,15 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/_mixins.scss";
+
 .add-account {
 	height: 100%;
 	width: 100%;
 
-	@include grid-area(
-		(settings-title, dashboard-title, accounts, form),
-		(1fr, 9fr, 12fr, 88fr)
-	);
+	@include grid-area((settings-title, dashboard-title, accounts, form),
+		(1fr, 9fr, 12fr, 88fr));
 
 	&__settings-title {
 		grid-area: settings-title;
@@ -73,6 +74,7 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 			@include border-radius(medium);
 			text-transform: uppercase;
 			margin-bottom: 2rem;
+
 			font: {
 				family: "Gilroy_S";
 				size: $--fz_xs;
@@ -87,12 +89,13 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 		&__account {
 			text-align: center;
 			color: $--c_white;
+
 			font: {
 				family: "Gilroy_S";
 				size: $--fz_s;
 			}
 
-			& + .accounts__account {
+			&+.accounts__account {
 				margin-top: 0.8rem;
 			}
 		}
@@ -110,7 +113,9 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 		}
 
 		.block {
-			.input {
+
+			.input,
+			.select-input {
 				font-size: $--fz_m !important;
 			}
 		}
@@ -146,14 +151,15 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 			border: 0;
 			@include border-sides(0.1rem, solid, $--c_grey-light, (bottom));
 
-			& > * + *,
-			&__list > * + * {
+			&>*+*,
+			&__list>*+* {
 				margin-left: 2rem;
 			}
 
 			&__button {
 				margin-bottom: 0;
 				width: auto;
+
 				font: {
 					size: $--fz_m;
 				}

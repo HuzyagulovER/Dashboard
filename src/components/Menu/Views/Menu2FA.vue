@@ -1,12 +1,7 @@
 <template>
 	<section class="manu-2fa">
 		<div class="manu-2fa__image">
-			<img
-				src="@/assets/images/ImageConfirm.png"
-				alt=""
-				width="242"
-				height="493"
-			/>
+			<img src="@/assets/images/ImageConfirm.png" alt="" width="242" height="493" />
 		</div>
 
 		<div class="manu-2fa__container">
@@ -17,21 +12,13 @@
 						<p class="block__label label">
 							Для отключения введите пароль от Вашей учетной записи:
 						</p>
-						<input
-							class="block__input base-input input"
-							type="text"
-							placeholder="Ваш пароль"
-						/>
+						<input class="block__input base-input input" type="text" placeholder="Ваш пароль" />
 					</div>
 					<div class="item__row flex-column justify-start">
 						<p class="block__label label">
 							Вставьте текущий код из Google Authenticator:
 						</p>
-						<input
-							class="block__input base-input input"
-							type="text"
-							placeholder="Код из Google Authenticator"
-						/>
+						<input class="block__input base-input input" type="text" placeholder="Код из Google Authenticator" />
 					</div>
 				</div>
 			</BaseBlock>
@@ -48,6 +35,8 @@ import BaseBlock from "@/components/Elements/BaseBlock.vue";
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+
 .manu-2fa {
 	display: flex;
 	justify-content: center;
@@ -73,11 +62,9 @@ import BaseBlock from "@/components/Elements/BaseBlock.vue";
 			transform: translateX(-50%);
 			width: 130%;
 			height: 1.8rem;
-			background: radial-gradient(
-				closest-side,
-				rgba($color: $--c_black, $alpha: 0.5) 0%,
-				transparent 100%
-			);
+			background: radial-gradient(closest-side,
+					rgba($color: $--c_black, $alpha: 0.5) 0%,
+					transparent 100%);
 		}
 	}
 
@@ -123,8 +110,7 @@ import BaseBlock from "@/components/Elements/BaseBlock.vue";
 		.item {
 			padding: 0;
 
-			&__row {
-			}
+			&__row {}
 		}
 
 		.input {

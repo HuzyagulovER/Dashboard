@@ -1,4 +1,5 @@
 $--c_main: #1c1c1c;
+$--c_main-light: #212121;
 $--c_grey-dark: #282727;
 $--c_grey: #3c3c3c;
 $--c_grey-light: #6d6d6d;
@@ -9,13 +10,13 @@ $--c_black: #000;
 $--c_yellow: #ebfc56;
 $--c_red: #920a0a;
 $--c_green: #90d847;
-
 $--r_small: 1rem * 120 / 384;
 $--r_smedium: 1rem * 120 / 192;
 $--r_medium: 1rem * 120 / 128;
-$--r_merge: 1rem * 120 / 96;
+$--r_merge: 1rem * 120 / 80;
 $--r_large: 1rem * 120 / 48;
 
+$--fz_xxs: 1rem * 120 / 170;
 $--fz_xs: 1rem * 120 / 148;
 $--fz_s: 1rem * 120 / 128;
 $--fz_m: 1rem * 120 / 96;
@@ -33,6 +34,4 @@ $--grid-bottom-height: 100-$--grid-top-height;
 $px: 1px;
 $--mobile-breakpoint: 760px;
 
-:root {
-	--checkbox-height: 1.625rem;
-}
+$--padding_modile_broker: 7rem;

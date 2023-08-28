@@ -20,11 +20,18 @@
 					Authorization
 				</RouterLink>
 			</li>
+			<li class="breakpoints__item">
+				<RouterLink class="breakpoints__link" to="/broker">
+					Broker
+				</RouterLink>
+			</li>
 		</ul>
 	</section>
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/_variables.scss";
+
 .breakpoints {
 	padding: 3rem;
 

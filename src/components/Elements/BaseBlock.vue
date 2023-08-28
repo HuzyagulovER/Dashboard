@@ -5,6 +5,8 @@
 </template>
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/_mixins.scss";
 $row-gap: 1rem;
 $column-gap: 4.7rem;
 
@@ -20,6 +22,7 @@ $column-gap: 4.7rem;
 			weight: bold;
 			size: $--fz_xl;
 		}
+
 		position: relative;
 		align-self: flex-start;
 	}
@@ -29,6 +32,7 @@ $column-gap: 4.7rem;
 			family: "Orbitron_S";
 			size: $--fz_l;
 		}
+
 		position: absolute;
 		z-index: 2;
 		color: $--c_grey;
@@ -65,10 +69,10 @@ $column-gap: 4.7rem;
 
 @media screen and (min-width: $--mobile-breakpoint) {
 	.separated-desktop.base-block {
-		& > * {
+		&>* {
 			position: relative;
 
-			& + * {
+			&+* {
 				&::after {
 					content: "";
 					position: absolute;
@@ -76,12 +80,10 @@ $column-gap: 4.7rem;
 					left: calc($column-gap / -2);
 					height: 100%;
 					width: calc($px);
-					background: linear-gradient(
-						to bottom,
-						transparent 0%,
-						$--c_grey-light 50%,
-						transparent 100%
-					);
+					background: linear-gradient(to bottom,
+							transparent 0%,
+							$--c_grey-light 50%,
+							transparent 100%);
 				}
 			}
 		}
@@ -104,6 +106,7 @@ $column-gap: 4.7rem;
 			font: {
 				size: $--fz_m;
 			}
+
 			margin-left: 1.2rem;
 			width: $--fz_l;
 			height: $--fz_l;
@@ -118,29 +121,29 @@ $column-gap: 4.7rem;
 
 		&.break {
 			grid-template: auto / 1fr;
-			& > * {
-				& + * {
+
+			&>* {
+				&+* {
 					&::after {
 						top: calc($row-gap / -2);
 						left: 0;
 						width: 100%;
 						height: calc($px);
-						background: linear-gradient(
-							to right,
-							transparent 0%,
-							$--c_grey-light 50%,
-							transparent 100%
-						);
+						background: linear-gradient(to right,
+								transparent 0%,
+								$--c_grey-light 50%,
+								transparent 100%);
 					}
 				}
 			}
 		}
 	}
+
 	.separated-mobile.base-block {
-		& > * {
+		&>* {
 			position: relative;
 
-			& + * {
+			&+* {
 				&::after {
 					content: "";
 					position: absolute;
@@ -148,12 +151,10 @@ $column-gap: 4.7rem;
 					left: calc($column-gap / -2);
 					height: 100%;
 					width: calc($px);
-					background: linear-gradient(
-						to bottom,
-						transparent 0%,
-						$--c_grey-light 50%,
-						transparent 100%
-					);
+					background: linear-gradient(to bottom,
+							transparent 0%,
+							$--c_grey-light 50%,
+							transparent 100%);
 				}
 			}
 		}

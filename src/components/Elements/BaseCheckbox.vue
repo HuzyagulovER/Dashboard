@@ -7,6 +7,8 @@
 </template>
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+
 .checkbox {
 	width: calc(var(--checkbox-height) / 0.4333);
 	height: var(--checkbox-height);
@@ -43,7 +45,7 @@
 		cursor: pointer;
 	}
 
-	input:checked ~ .checkbox__toggler {
+	input:checked~.checkbox__toggler {
 		left: 100%;
 		transform: translateX(-100%);
 	}

@@ -1,4 +1,5 @@
 @use "sass:list";
+@import "_functions";
 
 $all-sides: top, right, bottom, left;
 
@@ -6,41 +7,33 @@ $all-sides: top, right, bottom, left;
 	border-radius: get-border-radius($radius);
 }
 
-@mixin border(
-	$border-width: 0,
+@mixin border($border-width: 0,
 	$border-type: solid,
-	$primary-color: $--c_white
-) {
+	$primary-color: $--c_white) {
 	border: $border-width $border-type $primary-color;
 }
 
-@mixin border-sides(
-	$border-width,
+@mixin border-sides($border-width,
 	$border-type: solid,
 	$primary-color: $--c_white,
-	$sides: $all-sides
-) {
+	$sides: $all-sides) {
 	@each $side in $sides {
 		border-#{$side}: $border-width $border-type $primary-color;
 	}
 }
 
-@mixin border-with-radius(
-	$border-width,
+@mixin border-with-radius($border-width,
 	$border-type,
 	$primary-color,
-	$radius
-) {
+	$radius) {
 	@include border($border-width, $border-type, $primary-color);
 	@include border-radius($radius);
 }
 
-@mixin border0-radii(
-	$top-left-radius,
+@mixin border0-radii($top-left-radius,
 	$top-right-radius,
 	$bottom-right-radius,
-	$bottom-left-radius
-) {
+	$bottom-left-radius) {
 	border-top-left-radius: get-border-radius($top-left-radius);
 	border-top-right-radius: get-border-radius($top-right-radius);
 	border-bottom-right-radius: get-border-radius($bottom-right-radius);
@@ -60,18 +53,14 @@ $all-sides: top, right, bottom, left;
 
 @mixin grid-area($areas: (), $sizes: ()) {
 	display: grid;
-	$default-sizes: (
-		#{$--grid-top-height}fr,
+	$default-sizes: (#{$--grid-top-height}fr,
 		#{$--grid-bottom-height}fr,
 		#{$--grid-left-width}fr,
-		#{$--grid-right-width}fr
-	);
-	@if list.length($areas) == 4 {
+		#{$--grid-right-width}fr);
+
+	@if list.length($areas)==4 {
 		$sizes: lists-merge($sizes, $default-sizes);
-		grid-template:
-			"#{list.nth($areas, 1)} #{list.nth($areas, 2)}" #{list.nth($sizes, 1)}
-			"#{list.nth($areas, 3)} #{list.nth($areas, 4)}" #{list.nth($sizes, 2)}
-			/ #{list.nth($sizes, 3)} #{list.nth($sizes, 4)};
+		grid-template: "#{list.nth($areas, 1)} #{list.nth($areas, 2)}"#{list.nth($sizes, 1)} "#{list.nth($areas, 3)} #{list.nth($areas, 4)}"#{list.nth($sizes, 2)} / #{list.nth($sizes, 3)} #{list.nth($sizes, 4)};
 	}
 }
 
@@ -80,14 +69,10 @@ $all-sides: top, right, bottom, left;
 	grid-template: repeat(#{$rows-number}, 1fr) / repeat(#{$columns-number}, 1fr);
 }
 
-@mixin grid-sizes(
-	$rows-number: (
-		1fr,
+@mixin grid-sizes($rows-number: (1fr,
 	),
-	$columns-number: (
-		1fr,
-	)
-) {
+	$columns-number: (1fr,
+	)) {
 	display: grid;
 	grid-template: grid-sides($rows-number, $columns-number);
 }

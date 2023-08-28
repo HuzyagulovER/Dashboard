@@ -5,9 +5,10 @@ module.exports = defineConfig({
 	css: {
 		loaderOptions: {
 			sass: {
-				additionalData: `@import "@/assets/scss/index.scss";`,
+				// additionalData: `@import "@/assets/scss/index.scss";`,
 			},
 		},
 	},
 	productionSourceMap: false,
+	// publicPath: "/examples/_dashboard/",
 });

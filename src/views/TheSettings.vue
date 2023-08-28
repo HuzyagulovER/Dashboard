@@ -1,17 +1,11 @@
 <template>
 	<main class="settings">
 		<div class="settings__burger-container burger-container">
-			<BaseBurger
-				:init-value="isActiveBurger"
-				@toggle="(is) => (isActiveBurger = is)"
-			/>
+			<BaseBurger :init-value="isActiveBurger" @toggle="(is) => (isActiveBurger = is)" />
 		</div>
 		<SettingsTitle class="settings__settings-title" />
 		<SettingsTopline />
-		<SettingsNav
-			class="settings__mobile-menu mobile-menu"
-			:class="{ _active: isActiveBurger }"
-		/>
+		<SettingsNav class="settings__mobile-menu mobile-menu" :class="{ _active: isActiveBurger }" />
 		<div class="page-view" style="grid-area: view">
 			<RouterView />
 		</div>
@@ -29,8 +23,11 @@ let isActiveBurger: Ref<boolean> = ref(false);
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/_mixins.scss";
+
 .settings {
-	@include grid-area((settings-title, topline, settings, view), (6.25rem));
+	@include grid-area((settings-title, topline, settings, view), (6.25rem, n, 17fr));
 	height: 100%;
 	width: 100%;
 }
@@ -44,7 +41,6 @@ let isActiveBurger: Ref<boolean> = ref(false);
 		&__burger-container,
 		&__settings-title {
 			position: absolute;
-			top: 0;
 			width: auto;
 		}
 
@@ -54,6 +50,7 @@ let isActiveBurger: Ref<boolean> = ref(false);
 			height: 7.5rem !important;
 			padding: 0 !important;
 			left: 6rem;
+			top: 0;
 		}
 
 		&__settings-title {
@@ -63,8 +60,7 @@ let isActiveBurger: Ref<boolean> = ref(false);
 			transform: translateY(-50%);
 		}
 
-		&__settings-topline {
-		}
+		&__settings-topline {}
 
 		&__mobile-menu {
 			top: 0 !important;

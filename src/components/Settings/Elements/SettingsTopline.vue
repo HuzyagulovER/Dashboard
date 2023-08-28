@@ -12,68 +12,81 @@
 		</div>
 		<div class="settings-topline__freeze freeze">
 			<p class="freeze__text">Заморозить</p>
-			<div class="freeze__checkbox">
-				<input type="checkbox" />
-				<div class="freeze__layout"></div>
-				<IconTick class="freeze__tick" />
-			</div>
+			<BaseCheckboxTick />
 		</div>
 		<div class="settings-topline__container">
-			<p
-				class="settings-topline__alert-menu"
-				@click="changeOpenAlertState(true)"
-			>
+			<p class="settings-topline__button" @click="togglePopup('openAlert', true)">
 				Alert Menu
 			</p>
+			<p class="settings-topline__button" @click="togglePopup('openLog', true)">
+				Alert Log
+			</p>
+			<RouterLink :to="{ path: '/broker' }" class="settings-topline__button">
+				АПИ Брокер
+			</RouterLink>
 		</div>
-		<SettingsAlert
-			:isActive="openAlert"
-			@close="changeOpenAlertState(false)"
-			style="
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				border: 0.1rem solid #fff;
-			"
-		/>
+
+		<SettingsAlert v-if="popups.openAlert" @close="togglePopup('openAlert', false)" class="settings-topline__popup" />
+		<SettingsLog v-if="popups.openLog" @close="togglePopup('openLog', false)" class="settings-topline__popup" />
 	</div>
 </template>
 
 <script lang="ts" setup>
-import IconTick from "@/components/Icons/IconTick.vue";
+import BaseCheckboxTick from "@/components/Elements/BaseCheckboxTick.vue";
 import SettingsAlert from "@/components/Settings/Elements/SettingsAlert.vue";
+import SettingsLog from "@/components/Settings/Elements/SettingsLog.vue";
 import { ref, Ref } from "vue";
 
-let openAlert: Ref<boolean> = ref(false);
+declare type PopUps = {
+	openAlert: boolean,
+	openBroken: boolean,
+	openLog: boolean,
+}
 
-function changeOpenAlertState(state: boolean): void {
-	openAlert.value = state;
+const popups: Ref<PopUps> = ref({
+	openAlert: false,
+	openBroken: false,
+	openLog: false,
+})
+
+function togglePopup(_var: string, state: boolean): void {
+	for (const key in popups.value) {
+		popups.value[key as keyof PopUps] = false
+	}
+	popups.value[_var as keyof PopUps] = state;
 }
 </script>
 
 <style lang="scss" >
+@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/_mixins.scss";
+
 .settings-topline {
 	grid-area: topline;
 	@include border-sides(0.1rem, solid, $--c_grey-light, [bottom]);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 2rem;
+	padding: 0 1.2rem;
 
 	.inputs {
 		display: flex;
 
 		&__wrapper {
 			display: flex;
-			& + .inputs__wrapper {
-				margin-left: 2.5rem;
+
+			&+.inputs__wrapper {
+				margin-left: 1.2rem;
 			}
 		}
 
 		&__text {
+			display: flex;
+			align-items: center;
 			margin-right: 0.8rem;
+
 			font: {
-				size: $--fz_xm;
+				size: calc($--fz_xm - 0.2rem);
 				weight: bold;
 			}
 		}
@@ -83,6 +96,8 @@ function changeOpenAlertState(state: boolean): void {
 			color: $--c_black;
 			width: auto;
 			background-color: $--c_white;
+			padding-top: 0;
+			padding-bottom: 0;
 		}
 	}
 
@@ -92,71 +107,35 @@ function changeOpenAlertState(state: boolean): void {
 
 		&__text {
 			margin-right: 0.5rem;
+
 			font: {
 				size: $--fz_xm;
 				family: "Gilroy_S";
 				// weight: bold;
 			}
+
 			color: $--c_yellow;
-		}
-
-		&__checkbox {
-			width: 1.5rem;
-			height: 1.5rem;
-			position: relative;
-
-			input {
-				width: 100%;
-				height: 100%;
-				opacity: 0;
-			}
-		}
-
-		&__layout,
-		&__tick {
-			pointer-events: none;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 100%;
-			height: 100%;
-		}
-
-		&__layout {
-			@include border-radius(small);
-			background-color: $--c_white;
-		}
-
-		&__tick {
-			visibility: hidden;
-			padding: 0.15rem;
-		}
-
-		input {
-			cursor: pointer;
-		}
-
-		input:checked ~ .freeze__tick {
-			visibility: visible;
-		}
-
-		input:checked ~ .freeze__layout {
-			background-color: $--c_yellow;
 		}
 	}
 
 	&__container {
+		display: flex;
 		align-self: flex-start;
+
+		&>*+* {
+			margin-left: 1rem;
+		}
 	}
 
-	&__alert-menu {
+	&__button {
 		cursor: pointer;
 		background-color: $--c_grey;
 		padding: 2.1rem 2rem 1.5rem;
 		@include border0-radii(0, 0, merge, merge);
+		color: $--c_greyish-white;
+
 		font: {
-			size: $--fz_xm;
+			size: $--fz_m;
 			weight: bold;
 		}
 	}
@@ -168,58 +147,60 @@ function changeOpenAlertState(state: boolean): void {
 		grid-template: auto / auto auto;
 		row-gap: 3rem;
 		padding: 0 6rem 3rem;
+		margin-top: 2.5rem;
 
 		.inputs {
 			order: 2;
+			grid-column: 1/3;
 
 			&__wrapper {
 				flex-direction: column;
-				& + .inputs__wrapper {
-					margin-left: 2.5rem;
+				flex: 1;
+
+				&+.inputs__wrapper {
+					margin-left: 4rem;
 				}
 			}
 
 			&__text {
 				margin-right: 0;
-				margin-bottom: 0.5rem;
-				font-size: $--fz_l;
+				margin-bottom: 0.8rem;
+				font-size: calc($--fz_l + 0.2rem);
 			}
 
 			&__input {
-				font-size: $--fz_xm !important;
+				font-size: $--fz_l !important;
 				padding: 0.3rem 1rem;
-				width: 16rem;
 				height: auto;
+				width: 100%;
 			}
 		}
 
 		.freeze {
-			flex-direction: column;
-			align-items: flex-start;
-			order: 3;
+			order: 1;
+			grid-column: 2/3;
 
 			&__text {
-				margin-bottom: 0.5rem;
-				margin-right: 0;
-				font-size: $--fz_l;
-			}
-
-			&__checkbox {
-				width: 2rem;
-				height: 2rem;
+				margin-bottom: .3rem;
+				margin-right: 1.2rem;
+				font-size: calc($--fz_l + .3rem);
 			}
 		}
 
 		&__container {
 			width: 100%;
-			order: 1;
+			order: 3;
 			grid-column: 1/3;
-			display: flex;
 			justify-content: flex-end;
 		}
 
-		&__alert-menu {
-			padding: 2rem 2.2rem 1.2rem;
+		&__button {
+			padding: 2rem 0;
+			flex: 1;
+			text-align: center;
+			@include border0-radii(merge, merge, merge, merge);
+
+
 			font: {
 				size: $--fz_l;
 			}

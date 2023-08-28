@@ -1,16 +1,10 @@
 <template>
 	<main class="menu">
 		<div class="menu__burger-container burger-container">
-			<BaseBurger
-				:init-value="isActiveBurger"
-				@toggle="(is) => (isActiveBurger = is)"
-			/>
+			<BaseBurger :init-value="isActiveBurger" @toggle="(is) => (isActiveBurger = is)" />
 		</div>
 
-		<MenuNav
-			class="menu__menu-nav mobile-menu"
-			:class="{ _active: isActiveBurger }"
-		/>
+		<MenuNav class="menu__menu-nav mobile-menu" :class="{ _active: isActiveBurger }" />
 		<RouterView class="menu__menu-main" />
 	</main>
 </template>
@@ -24,6 +18,8 @@ let isActiveBurger: Ref<boolean> = ref(false);
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+
 .menu {
 	display: flex;
 	width: 100%;

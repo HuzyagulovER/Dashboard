@@ -19,6 +19,8 @@ import IconGrade from "@/components/Icons/IconGrade.vue";
 </script>
 
 <style lang="scss" >
+@import "@/assets/scss/_variables.scss";
+
 .graph {
 	max-width: 34.38rem;
 	max-height: 22.75rem;
@@ -35,6 +37,7 @@ import IconGrade from "@/components/Icons/IconGrade.vue";
 			size: inherit;
 			weight: bold;
 		}
+
 		color: inherit;
 	}
 
@@ -52,10 +55,12 @@ import IconGrade from "@/components/Icons/IconGrade.vue";
 
 		&__value {
 			color: $--c_greyish-white;
+
 			font: {
 				size: $--fz_l;
 				weight: normal;
 			}
+
 			letter-spacing: 0.15rem;
 
 			span {
@@ -74,6 +79,7 @@ import IconGrade from "@/components/Icons/IconGrade.vue";
 		&__volume {
 			letter-spacing: 0.05rem;
 			font-size: $--fz_xm;
+
 			span {
 				color: $--c_greyish-white;
 			}
@@ -85,6 +91,7 @@ import IconGrade from "@/components/Icons/IconGrade.vue";
 		}
 	}
 }
+
 @media screen and (max-width: $--mobile-breakpoint) {
 	.graph {
 		padding: 2rem 2rem;
@@ -99,6 +106,7 @@ import IconGrade from "@/components/Icons/IconGrade.vue";
 				font: {
 					size: $--fz_xm;
 				}
+
 				letter-spacing: 0.15rem;
 			}
 		}
@@ -112,8 +120,7 @@ import IconGrade from "@/components/Icons/IconGrade.vue";
 				font-size: $--fz_m;
 			}
 
-			&__percent {
-			}
+			&__percent {}
 		}
 	}
 }

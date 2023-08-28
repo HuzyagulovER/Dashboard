@@ -38,13 +38,7 @@
 			<div class="terminal-settings__line line line_signal line_column">
 				<p class="line__text">Сообщение сигнала</p>
 				<div class="line__addition">
-					<textarea
-						name=""
-						id=""
-						cols="30"
-						rows="7"
-						class="base-input"
-					></textarea>
+					<textarea name="" id="" cols="30" rows="7" class="base-input"></textarea>
 				</div>
 			</div>
 			<div class="terminal-settings__line line line_test">
@@ -72,6 +66,9 @@ import BaseSelect from "@/components/Elements/BaseSelect.vue";
 
 
 <style lang="scss">
+@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/_mixins.scss";
+
 .terminal-settings {
 	grid-area: settings;
 	@include border-sides(0.1rem, solid, $--c_grey-light, [right]);
@@ -124,14 +121,17 @@ import BaseSelect from "@/components/Elements/BaseSelect.vue";
 				font-family: "Gilroy_S" !important;
 				margin-bottom: 0.8rem;
 			}
+
 			margin-top: 2.5rem;
 		}
 
 		&_signal {
 			margin-top: 2.5rem;
+
 			.line__text {
 				text-align: center;
 			}
+
 			.base-input {
 				resize: none;
 			}
@@ -161,6 +161,7 @@ import BaseSelect from "@/components/Elements/BaseSelect.vue";
 
 			&__addition {
 				width: 100%;
+
 				* {
 					font-size: $--fz_l;
 				}

@@ -104,6 +104,22 @@ const routes: Array<RouteRecordRaw> = [
 				path: "katana-strategy",
 				component: () => import("@/components/Settings/Views/SettingsKatanaStrategy.vue")
 			},
+			{
+				path: "geisha-strategy",
+				component: () => import("@/components/Settings/Views/SettingsGeishaStrategy.vue")
+			},
+			{
+				path: "musashi-strategy",
+				component: () => import("@/components/Settings/Views/SettingsMusashiStrategy.vue")
+			},
+			{
+				path: "supertrend-strategy",
+				component: () => import("@/components/Settings/Views/SettingsSupertrendStrategy.vue")
+			},
+			{
+				path: "alphatrend-strategy",
+				component: () => import("@/components/Settings/Views/SettingsAlphatrendStrategy.vue")
+			},
 		]
 	},
 	{
@@ -132,6 +148,40 @@ const routes: Array<RouteRecordRaw> = [
 			}
 		},
 
+	},
+	{
+		path: "/broker",
+		name: "Broker",
+		component: () => import("@/views/TheBroker.vue"),
+		children: [
+			{
+				path: 'open',
+				component: () => import("@/components/Broker/Views/BrokerOpen.vue")
+			},
+			{
+				path: 'average',
+				component: () => import("@/components/Broker/Views/BrokerAverage.vue")
+			},
+			{
+				path: 'sl',
+				component: () => import("@/components/Broker/Views/BrokerSL.vue")
+			},
+			{
+				path: 'slx',
+				component: () => import("@/components/Broker/Views/BrokerSLX.vue")
+			},
+			{
+				path: 'tp',
+				component: () => import("@/components/Broker/Views/BrokerTP.vue")
+			},
+		],
+		beforeEnter: (to, from, next) => {
+			if (to.path === "/broker") {
+				next({ path: "/broker/open" })
+			} else {
+				next()
+			}
+		}
 	},
 	{
 		path: "/add-account",

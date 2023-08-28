@@ -10,26 +10,16 @@
 				</div>
 				<div class="item__row flex-column">
 					<label class="block__label label" for="">Тип ордера</label>
-					<input
-						class="block__input input base-input yellow-border"
-						type="text"
-					/>
+					<input class="block__input input base-input yellow-border" type="text" />
 				</div>
 			</div>
 			<div class="block__item item">
 				<div class="item__row flex-column">
-					<label class="block__label label" for=""
-						>Объем открытия+объем позиции</label
-					>
-					<input
-						class="block__input input base-input yellow-border"
-						type="text"
-					/>
+					<label class="block__label label" for="">Объем открытия+объем позиции</label>
+					<input class="block__input input base-input yellow-border" type="text" />
 				</div>
 				<div class="item__row flex-column">
-					<label class="block__label label" for=""
-						>Переворот/Закрытие позиции</label
-					>
+					<label class="block__label label" for="">Переворот/Закрытие позиции</label>
 					<input class="block__input input base-input" type="text" />
 				</div>
 			</div>
@@ -72,6 +62,8 @@ import BaseCheckbox from "@/components/Elements/BaseCheckbox.vue";
 </script>
 
 <style lang="scss" >
+@import "@/assets/scss/_variables.scss";
+
 .terminal-close {
 	&__notice {
 		font-size: $--fz_s;

@@ -19,6 +19,9 @@ import IconSearch from "@/components/Icons/IconSearch.vue";
 </script>
 
 <style lang="scss" >
+@import "@/assets/scss/_variables.scss";
+@import "@/assets/scss/_mixins.scss";
+
 .settings-title {
 	display: flex;
 	justify-content: space-between;
@@ -29,6 +32,7 @@ import IconSearch from "@/components/Icons/IconSearch.vue";
 
 	&__title {
 		color: $--c_yellow;
+
 		font: {
 			family: "Gilroy_S";
 			size: $--fz_l;
@@ -43,7 +47,7 @@ import IconSearch from "@/components/Icons/IconSearch.vue";
 @media screen and (max-width: $--mobile-breakpoint) {
 	.settings-title {
 		&__title {
-			margin: 0 2rem;
+			margin: 0 1.5rem;
 
 			font: {
 				size: $--fz_xl;

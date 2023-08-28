@@ -1,33 +1,34 @@
 <template>
-	<nav class="terminal-nav">
-		<div class="terminal-nav__container">
-			<RouterLink class="terminal-nav__link" to="/terminal/open">
-				<p class="terminal-nav__link_text">Откр</p>
+	<nav class="broker-nav">
+		<div class="broker-nav__container">
+			<RouterLink class="broker-nav__link" to="/broker/open">
+				<p class="broker-nav__link_text">Open</p>
 			</RouterLink>
-			<RouterLink class="terminal-nav__link" to="/terminal/average">
-				<p class="terminal-nav__link_text">Усред</p>
+			<RouterLink class="broker-nav__link" to="/broker/average">
+				<p class="broker-nav__link_text">Average</p>
 			</RouterLink>
-			<RouterLink class="terminal-nav__link" to="/terminal/close">
-				<p class="terminal-nav__link_text">Закр</p>
+			<RouterLink class="broker-nav__link" to="/broker/sl">
+				<p class="broker-nav__link_text">SL</p>
 			</RouterLink>
-			<RouterLink class="terminal-nav__link" to="/terminal/sl">
-				<p class="terminal-nav__link_text">SL</p>
+			<RouterLink class="broker-nav__link" to="/broker/slx">
+				<p class="broker-nav__link_text">SLX</p>
 			</RouterLink>
-			<RouterLink class="terminal-nav__link" to="/terminal/slx">
-				<p class="terminal-nav__link_text">SLX</p>
-			</RouterLink>
-			<RouterLink class="terminal-nav__link" to="/terminal/tp">
-				<p class="terminal-nav__link_text">TP</p>
+			<RouterLink class="broker-nav__link" to="/broker/tp">
+				<p class="broker-nav__link_text">TP</p>
 			</RouterLink>
 		</div>
 	</nav>
 </template>
 
-<style lang="scss">
+<script setup lang="ts">
+
+</script>
+
+<style lang="scss" scoped>
 @import "@/assets/scss/_variables.scss";
 @import "@/assets/scss/_mixins.scss";
 
-.terminal-nav {
+.broker-nav {
 	grid-area: nav;
 	@include border-sides(0.1rem, solid, $--c_grey-light, (bottom));
 	@include padding-sides(0.75rem, (left, right, bottom));
@@ -55,7 +56,7 @@
 		}
 
 		&.router-link-active {
-			.terminal-nav__link_text {
+			.broker-nav__link_text {
 				color: $--c_greyish-white;
 				@include border0-radii(0, 0, merge, merge);
 			}
@@ -66,10 +67,14 @@
 }
 
 @media screen and (max-width: $--mobile-breakpoint) {
-	.terminal-nav {
+	.broker-nav {
+		padding: 0 $--padding_modile_broker - 1rem;
+		height: 6rem;
+		border: 0;
+
 		&__link {
 			&_text {
-				font-size: $--fz_xm;
+				// font-size: $--fz_xm;
 			}
 		}
 	}

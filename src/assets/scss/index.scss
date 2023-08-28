@@ -3,13 +3,19 @@
 @import "fonts";
 @import "functions";
 
+:root {
+	--checkbox-height: 1.625rem;
+}
+
 a {
 	text-decoration: none;
 	color: $--c_whitish-grey;
 }
+
 select {
 	appearance: none;
 }
+
 input {
 	border-radius: 0;
 }
@@ -22,21 +28,25 @@ input {
 	color: $--c_whitish-grey;
 	@include border-radius(small);
 	cursor: pointer;
+
 	font: {
 		size: 0.94rem;
 		family: "Gilroy_M";
 	}
 }
+
 .title_large {
 	font: {
 		family: "Gilroy_R";
 		size: 3.125rem;
 	}
+
 	margin-bottom: 1.5rem;
 	color: $--c_white;
 	letter-spacing: 0.2rem;
 	text-align: center;
 }
+
 .base-input {
 	color: $--c_whitish-grey;
 	background-color: $--c_grey-dark;
@@ -45,9 +55,11 @@ input {
 	font-size: 1rem;
 	width: 100%;
 }
-.base-input + .base-input {
+
+.base-input+.base-input {
 	margin-top: 1.5rem;
 }
+
 .underlined-input {
 	color: $--c_whitish-grey;
 	background-color: transparent;
@@ -56,6 +68,7 @@ input {
 	font-size: 1rem;
 	width: 100%;
 }
+
 .reg-form {
 	width: 23vw;
 
@@ -79,13 +92,16 @@ input {
 		justify-content: space-between;
 	}
 }
+
 .label {
 	font: {
 		size: $--fz_m;
 		family: "Gilroy_R";
 	}
+
 	color: $--c_whitish-grey;
 }
+
 .yellow {
 	color: $--c_yellow !important;
 }
@@ -93,31 +109,39 @@ input {
 .yellow-border {
 	@include border(0.1rem, solid, $--c_yellow);
 }
+
 .semibold {
 	font-family: "Gilroy_S";
 }
+
 .justify-start {
 	justify-content: flex-start !important;
 }
+
 .align-start {
 	align-items: flex-start !important;
 }
+
 .justify-center {
 	justify-content: center !important;
 }
+
 .align-center {
 	align-items: center !important;
 }
+
 select {
 	font: {
-		family: "Gilroy_S";
+		family: "Gilroy_R";
 	}
 }
+
 .page-view {
 	overflow-y: scroll;
 	display: flex;
 	flex-direction: column;
 }
+
 .flex-column {
 	flex-direction: column;
 }
@@ -134,7 +158,7 @@ select {
 			display: flex;
 			justify-content: space-between;
 
-			& + .item__row {
+			&+.item__row {
 				margin-top: 2rem;
 			}
 		}
@@ -159,6 +183,7 @@ select {
 		padding: 4rem 6rem;
 	}
 }
+
 .highlight-link.router-link-active {
 	color: $--c_yellow !important;
 	position: relative;
@@ -176,8 +201,16 @@ select {
 		z-index: -1;
 	}
 }
+
 .burger-container {
 	display: none;
+}
+
+.popup {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 0.1rem solid #fff;
 }
 
 $font-sizes: (
@@ -190,16 +223,25 @@ $font-sizes: (
 	fz_base: $--fz_base,
 );
 
-@each $fz-name, $fz in $font-sizes {
+@each $fz-name,
+$fz in $font-sizes {
 	.#{$fz-name} {
 		font-size: $fz;
 	}
+}
+
+.mt-a,
+.mr-a,
+.mb-a,
+.ml-a {
+	margin-top: auto !important;
 }
 
 @for $i from 0 through 5 {
 	.mr-#{$i} {
 		margin-right: 1rem * $i !important;
 	}
+
 	.mt-#{$i} {
 		margin-top: 0.5rem * $i !important;
 	}
@@ -217,8 +259,17 @@ $font-sizes: (
 	.w-#{$i*10} {
 		width: $i * 10%;
 	}
+
 	.display-mxw-#{$i*10} {
 		max-width: $i * 10vw;
+	}
+}
+
+@media screen and (min-width: $--mobile-breakpoint) {
+	@for $i from 0 through 10 {
+		.desktop-w-#{$i*10} {
+			width: $i * 10%;
+		}
 	}
 }
 
@@ -232,6 +283,7 @@ $font-sizes: (
 		justify-content: flex-start !important;
 		align-items: center;
 	}
+
 	.block {
 		&__item {
 			@include padding-sides(2rem, (top, bottom));
@@ -243,13 +295,17 @@ $font-sizes: (
 
 		.item {
 			&__row {
-				& + .item__row {
+				&+.item__row {
 					margin-top: 1.5rem;
 				}
 			}
 
 			.title {
 				font-size: $--fz_xl !important;
+			}
+
+			&__button {
+				font-size: $--fz_xm;
 			}
 
 			&__arrow {
@@ -273,6 +329,7 @@ $font-sizes: (
 			padding: 2.5rem 3.3rem;
 		}
 	}
+
 	.mobile-menu {
 		position: absolute;
 		left: -100%;
@@ -291,6 +348,7 @@ $font-sizes: (
 			left: 0;
 		}
 	}
+
 	.burger-container {
 		display: flex;
 		align-items: center;
@@ -300,11 +358,13 @@ $font-sizes: (
 		background-color: $--c_main;
 		z-index: 6;
 	}
+
 	.highlight-link.router-link-active {
 		&::before {
 			@include border-radius(merge);
 		}
 	}
+
 	.reg-form {
 		width: 70%;
 
@@ -327,9 +387,11 @@ $font-sizes: (
 		.mobile-mr-#{$i} {
 			margin-right: 1rem * $i;
 		}
+
 		.mobile-mt-#{$i} {
 			margin-top: 1rem * $i !important;
 		}
+
 		.mobile-mb-#{$i} {
 			margin-bottom: 1rem * $i;
 		}

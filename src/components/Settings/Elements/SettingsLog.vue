@@ -159,8 +159,8 @@ function closeAlert() {
 		}
 
 		&__button {
-			font-size: $--fz_m;
-			padding: 0.5rem 3.3rem;
+			font-size: $--fz_m !important;
+			padding: 0.5rem 3.3rem !important;
 		}
 
 		.table {

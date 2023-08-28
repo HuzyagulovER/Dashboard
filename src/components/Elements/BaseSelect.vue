@@ -78,7 +78,7 @@ import IconCorner from "@/components/Icons/IconCorner.vue";
 		}
 
 		&__corner {
-			width: 2.6rem;
+			width: 2.2rem;
 			height: 100%;
 			right: 1.2rem;
 		}

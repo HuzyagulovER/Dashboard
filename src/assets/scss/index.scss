@@ -321,7 +321,7 @@ $fz in $font-sizes {
 		&__input.input,
 		.base-select__select,
 		.underlined-input {
-			@include padding-sides(0.7rem, (top, bottom));
+			@include padding-sides(0.7rem !important, (top, bottom));
 			font-size: $--fz_xm + 0.2rem !important;
 		}
 

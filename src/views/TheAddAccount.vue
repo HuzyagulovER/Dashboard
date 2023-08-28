@@ -178,6 +178,17 @@ import BaseButton from "@/components/Elements/BaseButton.vue";
 				}
 			}
 		}
+
+		.form {
+			.block {
+
+				.select-input {
+					select {
+						font-size: $--fz_m !important;
+					}
+				}
+			}
+		}
 	}
 }
 </style>
